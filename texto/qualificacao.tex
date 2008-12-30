@@ -1,0 +1,227 @@
+% Arquivo LaTeX de exemplo de dissertação/tese a ser apresentados à CPG
+% do IME-USP
+% 
+% Versão 2: Ter Jul  1 17:28:18 BRT 2008
+% Autor: J.P. Mena-Chalco
+% 
+% Obs: Leia previamente o texto do arquivo Readme.txt
+%
+
+\documentclass[11pt,twoside,letterpaper]{book}
+
+% ---------------------------------------------------------------------------- %
+% Pacotes 
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[pdftex]{graphicx}           % usamos arquivos pdf/png como figuras
+\usepackage{color}
+\usepackage{pifont}
+\usepackage{amsfonts}
+\usepackage{amssymb} 
+\usepackage{setspace}                   % espaçamento flexível
+\usepackage[small,compact]{titlesec} 	% cabeçalhos dos títulos: menores e compactos
+\usepackage{indentfirst} 				% indentação do primeiro parágrafo
+\usepackage{cite}  						% modo de citação
+\usepackage{subfigure} 					% uso de várias figuras numa só
+\usepackage{makeidx} 					% índice remissivo
+\usepackage[nottoc]{tocbibind} 			% acrescentamos a bibliografia/indice/conteudo no Table of Contents
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{caption}
+\usepackage[pagebackref,colorlinks=true,urlcolor=red,citecolor=green,linkcolor=blue]{hyperref}
+\usepackage[letterpaper,top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm]{geometry}
+
+% ---------------------------------------------------------------------------- %
+% Alguns comandos
+\graphicspath{{./figuras/}} 			% path das figuras (recomendável)
+\makeindex  							% para o índice remissivo
+\raggedbottom   						% para não permitir espaços extra no texto
+\listfiles  							% lista os arquivos utilizados no latex durante a compilação
+\normalsize
+
+% Fontes menores nos captions (para figuras e tabelas)
+\newcommand{\captionfonts}{\small}
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+% para melhorar o posicionamento das figuras no texto
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+
+% ---------------------------------------------------------------------------- %
+% Corpo do texto
+\begin{document}
+\frontmatter \onehalfspacing  % espaçamento
+
+% ---------------------------------------------------------------------------- %
+% Capa
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{2.3cm}
+    \textbf{\Large{Open Source and Agile:\\
+        Two worlds that should have a closer interaction}}\\
+	
+    \vspace*{1.2cm}
+    \Large{Hugo Corbucci}
+    
+    \vskip 2cm
+	\textsc{
+	Qualificação apresentada\\[-0.25cm] 
+	ao\\[-0.25cm]
+	Instituto de Matemática e Estatística\\[-0.25cm]
+	da\\[-0.25cm]
+	Universidade de São Paulo}
+    
+    \vskip 1.5cm
+    Programa: Mestrado em Ciências da Computação\\
+    Orientador: Prof. Dr. Alfredo Goldman
+
+    \vskip 1cm
+	\normalsize{Durante o desenvolvimento deste trabalho o autor recebeu auxílio
+	financeiro do projeto Qualipso}
+	
+    \vskip 0.5cm
+    \normalsize{São Paulo, janeiro de 2009}
+\end{center}
+
+% ---------------------------------------------------------------------------- %
+% Página de rosto (só para a versão final)
+%\newpage
+%\thispagestyle{empty}
+%	\begin{center}
+%    	\vspace*{2.3 cm}
+%    	\textbf{\Large{Título do trabalho a ser apresentado à \\
+%		CPG para a dissertação/tese}}\\
+%	    \vspace*{2 cm}
+%	\end{center}
+%
+%	\vskip 2cm
+%
+%	\begin{flushright}
+%	Este exemplar corresponde à redação\\
+%	final da dissertação devidamente corrigida\\
+%	e defendida por Hugo Corbucci\\
+%	e aprovada pela Comissão Julgadora.
+%	\vskip 2cm
+%
+%	\end{flushright}
+%	\vskip 4.2cm
+%
+%	\begin{quote}
+%	\noindent Banca Examinadora:
+%	
+%	\begin{itemize}
+%		\item Prof. Dr. Alfredo Goldman (orientador) - IME-USP.
+%		\item Prof. Dr. Fabio Kon - IME-USP.
+%		\item Prof. Dr. Nome Completo - IMPA.
+%	\end{itemize}
+%	  
+%	\end{quote}
+%\pagebreak
+
+\pagenumbering{roman} 	% começamos a numerar 
+
+% ---------------------------------------------------------------------------- %
+% Agradecimentos
+\chapter*{Agradecimentos}
+
+This work was supported by the QualiPSo project \cite{Qualipso}. We
+would like to thank Christian Reis for his help, interesting
+discussions and support as well as Danilo T. Sato and Mariana V. Bravo
+for reviewing this work.
+
+% ---------------------------------------------------------------------------- %
+% Resumo
+\chapter*{Resumo}
+
+Métodos ágeis e comunidades de software livre compartilham culturas
+similares mas com diferentes abordagens para superar
+dificuldades. Apesar dos diversos professionais envolvidos em ambos
+mundos, os métodos ágeis não são tão fortes quanto poderiam na
+comunidade de software livre nem o contrário. Esse trabalho identifica
+e expõe os obstáculos que separam essas comunidades para extrair as
+melhores soluções de cada uma e contribuir com sugestões de
+ferramentas e processos de desenvolvimento em ambas comunidades.
+
+\noindent \textbf{Palavras-chave:} métodos ágeis, open source,
+software livre
+
+% ---------------------------------------------------------------------------- %
+% Abstract
+\chapter*{Abstract}
+
+Agile methods and open source software communities share similar
+cultures with different approaches to overcome problems. Although
+several professionals are involved in both worlds, neither agile
+methodologies are as strong as they could be in open source
+communities nor those communities provide strong contributions to
+agile methods. This work identifies and exposes the obstacles that
+separate those communities in order to extract the best of them and
+improve both sides with suggestions of tools and development
+processes.
+
+\noindent \textbf{Keywords:} agile methods, open source
+
+% ---------------------------------------------------------------------------- %
+% Sumário
+\tableofcontents % imprime o sumário
+
+% ---------------------------------------------------------------------------- %
+% Listas: abreviaturas, símbolos, figuras e tabelas
+
+\chapter{Lista de Abreviaturas}
+\begin{tabular}{ll}
+ 		OSS         & Software de código aberto (\emph{Open Source Software}).\\
+ 		FLOSS       & Software \Large{Gratuito?} Livre e de código aberto (\emph{Free, Libre and Open Source Software}).\\
+\end{tabular}
+
+\chapter{Lista de Símbolos}
+\begin{tabular}{ll}
+		$\omega$    & Freqüência angular.\\
+\end{tabular}
+
+\listoffigures               % lista de Figuras
+\listoftables                % lista de Tabelas
+
+% ---------------------------------------------------------------------------- %
+% Capítulos
+\mainmatter
+
+%\singlespacing              % espaçamento simples
+\onehalfspacing              % espaçamento um e meio
+%\doublespacing              % espaçamento duplo
+
+\input cap-introducao        % associado ao arquivo: 'cap-introducao.tex'
+\input cap-definicoes        % associado ao arquivo: 'cap-definicoes.tex'
+\input cap-open-to-agile     % associado ao arquivo: 'cap-open-to-agile.tex'
+\input cap-agile-to-open     % associado ao arquivo: 'cap-agile-to-open.tex'
+\input cap-conclusoes        % associado ao arquivo: 'cap-conclusoes.tex'
+\appendix
+\include{ape-pesquisas}      % associado ao arquivo: 'ape-pesquisas.tex'
+
+% ---------------------------------------------------------------------------- %
+% Bibliografia
+\backmatter \singlespacing   % espaçamento simples
+
+\bibliographystyle{amsplain}
+\bibliography{bibliografia}  % associado ao arquivo: 'bibliografia.bib'
+
+% ---------------------------------------------------------------------------- %
+% Índice remissivo
+\index{TBP|see{periodicidade região codificante}}
+
+\printindex   % imprime o índice remissivo no documento 
+
+\end{document}
+
