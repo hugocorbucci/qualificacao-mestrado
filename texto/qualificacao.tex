@@ -1,8 +1,5 @@
-% Arquivo LaTeX de exemplo de dissertaÁ„o/tese a ser apresentados ‡ CPG
+% Arquivo LaTeX de exemplo de disserta√ß√£o/tese a ser apresentados √† CPG
 % do IME-USP
-% 
-% Vers„o 2: Ter Jul  1 17:28:18 BRT 2008
-% Autor: J.P. Mena-Chalco
 % 
 % Obs: Leia previamente o texto do arquivo Readme.txt
 %
@@ -12,18 +9,18 @@
 % ---------------------------------------------------------------------------- %
 % Pacotes 
 \usepackage[brazil]{babel}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[pdftex]{graphicx}           % usamos arquivos pdf/png como figuras
 \usepackage{color}
 \usepackage{pifont}
 \usepackage{amsfonts}
 \usepackage{amssymb} 
-\usepackage{setspace}                   % espaÁamento flexÌvel
-\usepackage[small,compact]{titlesec} 	% cabeÁalhos dos tÌtulos: menores e compactos
-\usepackage{indentfirst} 				% indentaÁ„o do primeiro par·grafo
-\usepackage{cite}  						% modo de citaÁ„o
-\usepackage{subfigure} 					% uso de v·rias figuras numa sÛ
-\usepackage{makeidx} 					% Ìndice remissivo
+\usepackage{setspace}                   % espa√ßamento flex√≠vel
+\usepackage[small,compact]{titlesec} 	% cabe√ßalhos dos t√≠tulos: menores e compactos
+\usepackage{indentfirst} 				% indenta√ß√£o do primeiro par√°grafo
+\usepackage{cite}  						% modo de cita√ß√£o
+\usepackage{subfigure} 					% uso de v√°rias figuras numa s√≥
+\usepackage{makeidx} 					% √≠ndice remissivo
 \usepackage[nottoc]{tocbibind} 			% acrescentamos a bibliografia/indice/conteudo no Table of Contents
 \usepackage{setspace}
 \usepackage{longtable}
@@ -34,10 +31,10 @@
 
 % ---------------------------------------------------------------------------- %
 % Alguns comandos
-\graphicspath{{./figuras/}} 			% path das figuras (recomend·vel)
-\makeindex  							% para o Ìndice remissivo
-\raggedbottom   						% para n„o permitir espaÁos extra no texto
-\listfiles  							% lista os arquivos utilizados no latex durante a compilaÁ„o
+\graphicspath{{./figuras/}} 			% path das figuras (recomend√°vel)
+\makeindex  							% para o √≠ndice remissivo
+\raggedbottom   						% para n√£o permitir espa√ßos extra no texto
+\listfiles  							% lista os arquivos utilizados no latex durante a compila√ß√£o
 \normalsize
 
 % Fontes menores nos captions (para figuras e tabelas)
@@ -62,57 +59,57 @@
 % ---------------------------------------------------------------------------- %
 % Corpo do texto
 \begin{document}
-\frontmatter \onehalfspacing  % espaÁamento
+\frontmatter \onehalfspacing  % espa√ßamento
 
 % ---------------------------------------------------------------------------- %
 % Capa
 \thispagestyle{empty}
 \begin{center}
     \vspace*{2.3cm}
-    \textbf{\Large{Open Source and Agile:\\
-        Two worlds that should have a closer interaction}}\\
+    \textbf{\Large{M√©todos √°geis e software livre:\\
+        Dois mundos que deveriam ter uma intera√ß√£o mais intensa}}\\
 	
     \vspace*{1.2cm}
     \Large{Hugo Corbucci}
     
     \vskip 2cm
 	\textsc{
-	QualificaÁ„o apresentada\\[-0.25cm] 
+	Qualifica√ß√£o apresentada\\[-0.25cm] 
 	ao\\[-0.25cm]
-	Instituto de Matem·tica e EstatÌstica\\[-0.25cm]
+	Instituto de Matem√°tica e Estat√≠stica\\[-0.25cm]
 	da\\[-0.25cm]
-	Universidade de S„o Paulo}
+	Universidade de S√£o Paulo}
     
     \vskip 1.5cm
-    Programa: Mestrado em CiÍncias da ComputaÁ„o\\
+    Programa: Mestrado em Ci√™ncias da Computa√ß√£o\\
     Orientador: Prof. Dr. Alfredo Goldman
 
     \vskip 1cm
-	\normalsize{Durante o desenvolvimento deste trabalho o autor recebeu auxÌlio
+	\normalsize{Durante o desenvolvimento deste trabalho o autor recebeu aux√≠lio
 	financeiro do projeto Qualipso}
 	
     \vskip 0.5cm
-    \normalsize{S„o Paulo, janeiro de 2009}
+    \normalsize{S√£o Paulo, janeiro de 2009}
 \end{center}
 
 % ---------------------------------------------------------------------------- %
-% P·gina de rosto (sÛ para a vers„o final)
+% P√°gina de rosto (s√≥ para a vers√£o final)
 %\newpage
 %\thispagestyle{empty}
 %	\begin{center}
 %    	\vspace*{2.3 cm}
-%    	\textbf{\Large{TÌtulo do trabalho a ser apresentado ‡ \\
-%		CPG para a dissertaÁ„o/tese}}\\
+%    	\textbf{\Large{T√≠tulo do trabalho a ser apresentado √† \\
+%		CPG para a disserta√ß√£o/tese}}\\
 %	    \vspace*{2 cm}
 %	\end{center}
 %
 %	\vskip 2cm
 %
 %	\begin{flushright}
-%	Este exemplar corresponde ‡ redaÁ„o\\
-%	final da dissertaÁ„o devidamente corrigida\\
+%	Este exemplar corresponde √† reda√ß√£o\\
+%	final da disserta√ß√£o devidamente corrigida\\
 %	e defendida por Hugo Corbucci\\
-%	e aprovada pela Comiss„o Julgadora.
+%	e aprovada pela Comiss√£o Julgadora.
 %	\vskip 2cm
 %
 %	\end{flushright}
@@ -130,31 +127,31 @@
 %	\end{quote}
 %\pagebreak
 
-\pagenumbering{roman} 	% comeÁamos a numerar 
+\pagenumbering{roman} 	% come√ßamos a numerar 
 
 % ---------------------------------------------------------------------------- %
 % Agradecimentos
 \chapter*{Agradecimentos}
 
-This work was supported by the QualiPSo project \cite{Qualipso}. We
-would like to thank Christian Reis for his help, interesting
-discussions and support as well as Danilo T. Sato and Mariana V. Bravo
-for reviewing this work.
+Este trabalho contou com o apoio do projeto Qualipso \cite{Qualipso}.
+
+Gostaria de agradecer ao Christian Reis por sua ajuda, pelas
+discuss√µes interessantes e pelo apoio.
 
 % ---------------------------------------------------------------------------- %
 % Resumo
 \chapter*{Resumo}
 
-MÈtodos ·geis e comunidades de software livre compartilham culturas
+M√©todos √°geis e comunidades de software livre compartilham culturas
 similares mas com diferentes abordagens para superar
-dificuldades. Apesar dos diversos professionais envolvidos em ambos
-mundos, os mÈtodos ·geis n„o s„o t„o fortes quanto poderiam na
-comunidade de software livre nem o contr·rio. Esse trabalho identifica
-e expıe os obst·culos que separam essas comunidades para extrair as
-melhores soluÁıes de cada uma e contribuir com sugestıes de
+dificuldades. Apesar dos diversos profissionais envolvidos em ambos
+mundos, os m√©todos √°geis n√£o s√£o t√£o fortes quanto poderiam na
+comunidade de software livre nem o contr√°rio. Esse trabalho identifica
+e exp√µe os obst√°culos que separam essas comunidades para extrair as
+melhores solu√ß√µes de cada uma e contribuir com sugest√µes de
 ferramentas e processos de desenvolvimento em ambas comunidades.
 
-\noindent \textbf{Palavras-chave:} mÈtodos ·geis, open source,
+\noindent \textbf{Palavras-chave:} m√©todos √°geis, open source,
 software livre
 
 % ---------------------------------------------------------------------------- %
@@ -174,33 +171,33 @@ processes.
 \noindent \textbf{Keywords:} agile methods, open source
 
 % ---------------------------------------------------------------------------- %
-% Sum·rio
-\tableofcontents % imprime o sum·rio
+% Sum√°rio
+\tableofcontents % imprime o sum√°rio
 
 % ---------------------------------------------------------------------------- %
-% Listas: abreviaturas, sÌmbolos, figuras e tabelas
+% Listas: abreviaturas, s√≠mbolos, figuras e tabelas
 
 \chapter{Lista de Abreviaturas}
 \begin{tabular}{ll}
- 		OSS         & Software de cÛdigo aberto (\emph{Open Source Software}).\\
- 		FLOSS       & Software \Large{Gratuito?} Livre e de cÛdigo aberto (\emph{Free, Libre and Open Source Software}).\\
+ 		OSS         & Software de c√≥digo aberto (\emph{Open Source Software}).\\
+ 		FLOSS       & Software Gratuito, Livre e de c√≥digo aberto (\emph{Free, Libre and Open Source Software}).\\
 \end{tabular}
 
-\chapter{Lista de SÌmbolos}
-\begin{tabular}{ll}
-		$\omega$    & Freq¸Íncia angular.\\
-\end{tabular}
+%\chapter{Lista de S√≠mbolos}
+%\begin{tabular}{ll}
+%		$\omega$    & Freq√º√™ncia angular.\\
+%\end{tabular}
 
 \listoffigures               % lista de Figuras
 \listoftables                % lista de Tabelas
 
 % ---------------------------------------------------------------------------- %
-% CapÌtulos
+% Cap√≠tulos
 \mainmatter
 
-%\singlespacing              % espaÁamento simples
-\onehalfspacing              % espaÁamento um e meio
-%\doublespacing              % espaÁamento duplo
+%\singlespacing              % espa√ßamento simples
+\onehalfspacing              % espa√ßamento um e meio
+%\doublespacing              % espa√ßamento duplo
 
 \input cap-introducao        % associado ao arquivo: 'cap-introducao.tex'
 \input cap-definicoes        % associado ao arquivo: 'cap-definicoes.tex'
@@ -212,16 +209,16 @@ processes.
 
 % ---------------------------------------------------------------------------- %
 % Bibliografia
-\backmatter \singlespacing   % espaÁamento simples
+\backmatter \singlespacing   % espa√ßamento simples
 
 \bibliographystyle{amsplain}
 \bibliography{bibliografia}  % associado ao arquivo: 'bibliografia.bib'
 
 % ---------------------------------------------------------------------------- %
-% Õndice remissivo
-\index{TBP|see{periodicidade regi„o codificante}}
+% √çndice remissivo
+%\index{TBP|see{periodicidade regi√£o codificante}}
 
-\printindex   % imprime o Ìndice remissivo no documento 
+\printindex   % imprime o √≠ndice remissivo no documento 
 
 \end{document}
 
