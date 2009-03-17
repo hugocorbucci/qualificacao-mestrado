@@ -1,61 +1,78 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Agile going Open source}
+\chapter{Métodos ágeis no contexto do Software Livre}
 \label{cap:agile}
 
-At Agile 2008, Mary Poppendieck led a
-workshop\footnote{http://submissions.agile2008.org/node/376} with
-Christian Reis entitled ``Open Source Meets Agile - What can each
-teach the other?''. Its goal was to discuss successful practices in an
-OS project that could not be found in Agile methods. This way,
-attendees would capture some essential principles that apply to open
-source projects and could improve agile methods. A short summary of
-the discussion can be found in section \ref{sec:foss-over-agile}.
-Thinking the other way around, agile methodologies lack some special
-solutions related to OS development. Section
-\ref{sec:agile-improve-os} presents how creating this solution
-would help OS software developmentand also benefits agile methods.
+Na Agile 2008, Mary Poppendieck conduziu um
+\emph{workshop}\footnote{http://submissions.agile2008.org/node/376 -
+  Acessado em 16/03/2009} com Christian Reis intitulado \emph{``Open
+  Source Meets Agile - What can each teach the other?''}. Seu objetivo
+era de discustir práticas de sucesso em um projeto de software livre
+que não eram encontradas em métodos ágeis. Desta forma, os
+participantes poderiam compreender alguns princípios essenciais que se
+aplicando a projetos de software livre e pode melhorar os atuais
+métodos ágeis. Um pequeno resumo da discussão pode ser encontrado na
+seção \ref{sec:foss-over-agile}.
 
-\section{FOSS principles agile should learn from}
+De um outro ponto de vista, faltam soluções especiais para o
+desenvolvimento de software livre nos métodos ágeis mais conhecidos
+atualmente. A Seção \ref{sec:agile-improve-os} apresenta como a
+criação dessa solução poderia ajudar tanto o software livre quanto a
+comunidade de métodos ágeis.
+
+\section{Princípios do Software Livre que os métodos ágeis deveriam
+  aprender}
 \label{sec:foss-over-agile}
 
-Reis is a Brazilian OS developer working at Canonical Inc. on the
-development of LaunchPad, the project management software for Ubuntu
-Linux distribution. The workshop started with Reis' presentation on
-how LaunchPad is developed. Three main points were highlighted during
-the discussions that followed the presentation and will be described
-in the next subsection. The first one (Section
-\ref{subsec:commiter}) describes and discusses the role of
-commiter. The second one (Section \ref{subsec:publicity}) presents
-the benefits of having a transparent and public process and the last
-(Section \ref{subsec:crossrev}) talks about cross reviewing systems
-used to ensure communication and clarity of the code.
+Reis é um desenvolvedor Brasileiro de software livre que trabalha para
+a Canonical Inc. no desenvolvimento do LaunchPad, o projeto de
+gerenciamento de software para a distribuição Linux Ubuntu. O
+\emph{workshop} teve início com a apresentação de Reis sobre como o
+LaunchPad é desenvolvido. Três pontos essenciais foram levantados
+durante a discussão que deu sequência à apresentação e será descrita
+na próxima subseção. O primeiro (Subseção \ref{subsec:commiter})
+descreve e discute o papel de \emph{commiter}.%TODO traduzir? Como?
+O segundo (Subseção \ref{subsec:publicity}) apresenta os benefícios de
+seguir um processo de desenvolvimento que seja público e transparente.
+Por fim, o último (Subseção \ref{subsec:crossrev}) aborda o sistema de
+revisão crusada dos sistemas que é usado para garantir a comunicação e
+a clareza do código.
 
-\subsection{The commiter role}
+\subsection{O papel do \emph{commiter}}
 \label{subsec:commiter}
 
-Part of the value that was identified in OS was the role of commiter.
-A commiter is a person that has rights to add source code to the trunk
-branch of the version control repository. The trunk branch is the
-portion of the code that is packaged to form a new version of the
-software. It means that the software community trusts the commiter to
-evaluate source code. This is the OS way to have most parts of the
-software source code reviewed to reduce the amount of errors and
-improve the code clarity.
+Parte do valor que foi identificado no software livre foi o papel do
+\emph{commiter}. Um \emph{commiter} é uma pessoa que tem direitos de
+adicionar código fonte ao ``galho''\footnote{Um galho de um
+  repositório é uma ramificação estrutura de diretórios que guarda os
+  arquivos} principal do repositório de controle de versões. O
+``galho'' principal é a parte do código que será empacotada para
+formar uma nova versão do programa. Aos olhos da comunidade do
+software, o commiter é uma pessoa confiável que é muito boa para
+avaliar a qualidade do código fonte. Este é o meio encontrado pelas
+comunidades de software livre para revisar a grande maioria do código
+fonte de forma a reduzir a quantidade de erros e melhorar a clareza do
+código.
 
-Most OS projects have a very small team of commiters. Frequently the
-project leader is the only commiter and all patches must be suggested
-to her. According to Riehle \cite{Riehle2007}, there are three levels
-in OS common hierarchy. The first level is to be a user. Being a user,
-you get the right to use the software, report bugs and request
-features. The second level is being a contributor. The promotion
-between the first and the second level is implicit. It happens when a
-commiter accepts your patch and sends it to the trunk. Usually, nobody
-except the commiter and the contributor know about this change. The
-third role is the commiter. At this level, the transition is
-explicit. Contributors and commiters vouch for a contributor and
-recognize publicly the overall quality of his work. Reaching the
-commiter level is a very valuable promotion that means you produce
-good quality code and is involved in the project's development.
+A maioria dos projetos de software livre tem um grupo muito pequeno de
+\emph{commiters}. Frequentemente o líder do projeto é o único
+\emph{commiter} e todos os \emph{patches} devem passar por sua
+aprovação. De acordo com Riehle \cite{Riehle2007}, existem três níveis
+na hierarquia tradicional de um projeto de software livre. O primeiro
+nível é o de usuário. Usuários têm o direito de usar o programa,
+relatar problems e pedir funcionalidades. O segundo nível é o de
+contribuidor. A promoção entre o primeiro e o segundo nível é
+implícita. Ela acontece quando um \emph{commiter} aceita os
+\emph{patches} do usuário e os envia ao repositório de código no
+``galho'' principal. Normalmente, ninguém exceto o \emph{commiter} e o
+contribuidor sabem dessa promoção. O terceiro papel é o de
+\emph{commiter}. Neste nível, a transição é explícita. Contribuidores
+e \emph{commiters} desmontram apoio a um determinado contribuidor e
+reconhecem publicamente a qualidade geral de seu trabalho. Por isso,
+atingir o nível de \emph{commiter} é um feito valioso que significa
+que você produz código de ótima qualidade e está realmente envolvido
+com o desenvolvimento do projeto.
+
+%TODO Continuar traduzindo
 
 Agile methods entrust this role to every developer and it was
 suggested in the workshop that it might be good to have some sort of

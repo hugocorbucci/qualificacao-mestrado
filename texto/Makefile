@@ -10,6 +10,8 @@ LATEX     = latex
 PDFLATEX  = pdflatex
 BIBTEX    = bibtex
 MAKEINDEX = makeindex
+CHAPTERS=cap-agile-to-open.tex cap-conclusoes.tex cap-definicoes.tex cap-introducao.tex cap-open-to-agile.tex
+APENDIXES=ape-pesquisas.tex
 
 open: pdf
 	open $(BASE_NAME).pdf
@@ -17,20 +19,20 @@ open: pdf
 pdf: $(BASE_NAME).pdf
 ps: $(BASE_NAME).ps
 
-$(BASE_NAME).pdf: $(BASE_NAME).tex 
+$(BASE_NAME).pdf: $(BASE_NAME).tex ${CHAPTERS} ${APENDIXES}
 	$(PDFLATEX) $<
 	$(BIBTEX) $(BASE_NAME) 
 	$(MAKEINDEX) $(BASE_NAME) 
 	$(PDFLATEX) $< 
 	$(PDFLATEX) $<
 
-$(BASE_NAME).ps: $(BASE_NAME).tex 
+$(BASE_NAME).ps: $(BASE_NAME).tex ${CHAPTERS} ${APENDIXES}
 	$(LATEX) $<
 	$(BIBTEX) $(BASE_NAME) 
 	$(MAKEINDEX) $(BASE_NAME) 
 	$(LATEX) $< 
 	$(LATEX) $<
-	
+
 clean:
 	rm -f $(BASE_NAME)*.ps $(BASE_NAME)*.dvi *.log \
 	      *.aux *.blg *.toc \
