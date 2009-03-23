@@ -6,7 +6,7 @@ Na Agile 2008, Mary Poppendieck conduziu um
 \emph{workshop}\footnote{http://submissions.agile2008.org/node/376 -
   Acessado em 16/03/2009} com Christian Reis intitulado \emph{``Open
   Source Meets Agile - What can each teach the other?''}. Seu objetivo
-era de discustir práticas de sucesso em um projeto de software livre
+era de discutir práticas de sucesso em um projeto de software livre
 que não eram encontradas em métodos ágeis. Desta forma, os
 participantes poderiam compreender alguns princípios essenciais que se
 aplicando a projetos de software livre e pode melhorar os atuais
@@ -28,13 +28,13 @@ a Canonical Inc. no desenvolvimento do LaunchPad, o projeto de
 gerenciamento de software para a distribuição Linux Ubuntu. O
 \emph{workshop} teve início com a apresentação de Reis sobre como o
 LaunchPad é desenvolvido. Três pontos essenciais foram levantados
-durante a discussão que deu sequência à apresentação e será descrita
+durante a discussão que deu seqüência à apresentação e será descrita
 na próxima subseção. O primeiro (Subseção \ref{subsec:commiter})
 descreve e discute o papel de \emph{commiter}.%TODO traduzir? Como?
 O segundo (Subseção \ref{subsec:publicity}) apresenta os benefícios de
 seguir um processo de desenvolvimento que seja público e transparente.
 Por fim, o último (Subseção \ref{subsec:crossrev}) aborda o sistema de
-revisão crusada dos sistemas que é usado para garantir a comunicação e
+revisão cruzada dos sistemas que é usado para garantir a comunicação e
 a clareza do código.
 
 \subsection{O papel do \emph{commiter}}
@@ -59,228 +59,255 @@ A maioria dos projetos de software livre tem um grupo muito pequeno de
 aprovação. De acordo com Riehle \cite{Riehle2007}, existem três níveis
 na hierarquia tradicional de um projeto de software livre. O primeiro
 nível é o de usuário. Usuários têm o direito de usar o programa,
-relatar problems e pedir funcionalidades. O segundo nível é o de
+relatar problemas e pedir funcionalidades. O segundo nível é o de
 contribuidor. A promoção entre o primeiro e o segundo nível é
 implícita. Ela acontece quando um \emph{commiter} aceita os
 \emph{patches} do usuário e os envia ao repositório de código no
 ``galho'' principal. Normalmente, ninguém exceto o \emph{commiter} e o
 contribuidor sabem dessa promoção. O terceiro papel é o de
 \emph{commiter}. Neste nível, a transição é explícita. Contribuidores
-e \emph{commiters} desmontram apoio a um determinado contribuidor e
+e \emph{commiters} demonstram apoio a um determinado contribuidor e
 reconhecem publicamente a qualidade geral de seu trabalho. Por isso,
 atingir o nível de \emph{commiter} é um feito valioso que significa
 que você produz código de ótima qualidade e está realmente envolvido
 com o desenvolvimento do projeto.
 
-%TODO Continuar traduzindo
+Métodos ágeis delegam esse papel para cada um dos desenvolvedores da
+equipe. No \emph{workshop} sugeriram que alguma forma de controle no
+``galho'' principal poderia melhorar ainda mais a simplicidade do
+código fonte do aplicativo de produção. Na maioria dos métodos ágeis,
+uma equipe deveria ter um líder (um \emph{Scrum Master} em Scrum, um
+treinador em XP, etc...) que é mais experiente em alguns aspectos que
+o resto da equipe. Quando esse líder não tem conhecimento técnico, é
+sugerido que alguém seja designado como consultor técnico para ajudar
+o líder. De qualquer forma, o responsável técnico deveria cumprir o
+papel de lembrar a equipe das práticas que ela deveria seguir e
+discutir com seus membros as dificuldades que eles encontram.
 
-Agile methods entrust this role to every developer and it was
-suggested in the workshop that it might be good to have some sort of
-control to the main branch to ensure simplicity of the production
-source code. In most agile methods, a team should have a leader (a
-Scrum Master in Scrum, a Coach in XP, etc...) that is more experienced
-in some aspect than the rest of the team. When this leader does not
-have technical knowledge, it is suggested that someone should be
-pointed as the ``technical consultant'' to help the leader. Either
-way, the technical leader should discuss issues with the developers
-and remind them of the practices they should follow.
+Parece uma sugestão natural que o líder da equipe assuma então o papel
+do \emph{commiter}. Isso permitiria uma revisão externa do código
+fonte produzido melhorando então a clareza do código fonte
+produzido. Isso poderia reforçar a revisão de código contínua
+realizada durante a programação em pares com o objetivo direto de
+aumentar a clareza do código e não de minimizar a quantidade de
+erros. Por outro lado, o líder da equipe poderia se tornar o gargalo
+da produção de código ou seria forçado a abandonar suas outras tarefas
+para cumprir esta. A idéia seria, então, de manter um pequeno conjunto
+de desenvolvedores como \emph{commiters} e fazer o papel circular
+entre os membros da equipe. Ao trocar os membros do conjunto de
+\emph{commiters}, permite-se uma maior distribuição do conhecimento e
+reduz-se a aparente concentração de poder desse papel.
 
-It looks like a natural suggestion that the team's leader may assume
-the role of commiter. It would allow for an external review of the
-generated source code ensuring a higher level of clarity. This could
-support the pair programming code review not by reducing the amount of
-errors but by ensuring a cleaner code. On the other hand, the team's
-leader could become the bottleneck for code production or would have
-to abandon his other tasks to fulfill this one. An idea here would be
-to have a small set of developers being commiters and this role would
-circulate. Having the role circulating allows for a better knowledge
-spreading and reduces the power weight involved in this role.
-
-\subsection{Public results}
+\subsection{Resultados públicos}
 \label{subsec:publicity}
 
-Another important point was the publicity of all results regarding the
-project. According to Reis, non OS software can also benefit from
-public bug tracking and test results although they will have to accept
-some level of code detail to be exposed. Having such public tools
-encourages users to participate in the development process since they
-understand how the development is improved.
+Outro ponto importante foi a divulgação pública de todos os resultados
+relacionados ao projeto. De acordo com Reis, programas proprietários
+também pode se beneficiar de um sistema de rastreamento de erros
+público e de resultados de testes publicados. A contra-parte para
+abraçar os benefícios dessas práticas é o de expor alguns detalhes de
+código. Ter essas ferramentas de código disponíveis a todos encoraja
+os usuários a participar no processo de desenvolvimento já que eles
+entendem como e quando o programa é melhorado.
 
-In agile software development, bug tracking and test results are
-important information for the development team but no methodology
-clearly states that the client or user should be directly in contact
-with those tools. However, most say that the client should be
-considered part of the development team which can mean he should use
-those tools as the rest of the team does. The most used tools are very
-crude when considered from a non-developer perspective since few of
-them attribute a business meaning to their results. Few initiatives
-regarding tests exist on tools\footnote{RSpec - http://rspec.info/ -
-  Last accessed 30/09/2008}\footnote{JBehave - http://jbehave.org/ -
-  Last accessed 30/09/2008} related to Behaviour Driven Development
-\cite{North2006} to produce better reports and bug tracking systems
-have been improving over time.
+Em métodos ágeis, o resultado dos testes e o sistema de rastreamento
+de erros são informações muito importantes para a equipe de
+desenvolvimento. Apesar disso, nenhum métodos afirma explicitamente
+que o cliente e os usuários deveriam estar em contato direto com essas
+ferramentas. No entanto, a maioria afirma que o cliente deveria ser
+parte da equipe de desenvolvimento. Com esta última deve estar sempre
+em contato com essas ferramentas, pode-se interpretar que o cliente
+também deveria usar a ferramenta como o resto da equipe. Infelizmente,
+a maioria das ferramentas usadas são muito rudimentares do ponto de
+vista de um cliente já que poucas delas se preocupam em atribuir um
+significado de negócios aos resultados. Algumas
+iniciativas\footnote{RSpec - http://rspec.info/ - Último acesso em
+  30/09/2008}\footnote{JBehave - http://jbehave.org/ - Último acesso em
+  30/09/2008} relacionadas aos testes já existem ligadas ao movimento
+de Desenvolvimento Dirigido pelo Comportamento (\emph{BDD - Behaviour
+  Driven Development}) \cite{North2006} para produzir melhores
+relatórios. Já no ponto de vista dos sistema de rastreamento de erros,
+a evolução não aconteceu pontualmente mas as ferramentas mais recentes
+tentam apresentar uma interface com menos detalhes técnicos para
+alguns usuários (clientes).
 
-But publicity is not restrained to bugs or tests. Discussions between
-members of the project and even with outsiders are always logged in
-the mailing lists archives. Discussions outside of the mailing list
-are strongly discouraged since they prevent other people to contribue
-with comments and ideas.  Those logs help building a documentation for
-future users as well as creating a quick feedback system to
-newcomers. The practice also serves as a tool to improve respect
-between parts since all decisions are archived and saved for future
-access.
+Mas a divulgação pública não é restrita aos erros ou aos testes. As
+discussões entre os membros do projeto e até as discussões com pessoas
+de fora do projeto sempre são guardadas nos arquivos da lista de
+correio eletrônico. Discussões fora da lista de correio eletrônico são
+fortemente desencorajadas já que elas impedem outras pessoas de
+contribuir com comentários e idéias. Os arquivos das listas ajudam a
+construir uma documentação para futuros usuários assim como criar um
+rápido sistema de \emph{feedback} para novatos. Esta prática também
+ajuda como uma ferramenta para aumentar o respeito entre as pessoas
+envolvidas já que todas as discussões são salvas e guardadas para
+acesso futuro.
 
-This sort of traceability is one of the weak points of agile
-methods. Most of them suggest that design evolves with time as needed
-and that this evolution flows naturally on whiteboards or flip
-charts. The problem with this approach is that whiteboards are erased
-and flip charts are recycled. Even when those are persisted somehow
-(by pictures, transcription or even in the code itself), the
-discussion that led to the solution is lost. Talking is a very
-effective way to communicate but is also very ephemeral. Once the
-conversation is over, it is hard to quickly reach the precise
-information you are searching for. Emails have a much lower
-communication bandwidth but gain on their ability to search. In a
-short term, it is evident that talking is more effective than writing,
-especially in small teams. However in a medium or long period, the
-gains might outcome (as they do in OS) the losses.
+Esse tipo de rastreabilidade é um dos pontos fracos dos métodos
+ágeis. A maioria dos métodos sugere que o projeto do software
+(\emph{design}) evolua com o tempo conforme as necessidades. Essa
+evolução deveria fluir naturalmente dos quadros brancos ou \emph{flip
+  chart}. O problema com essa abordagem é que quadro brancos são
+apagados e \emph{flip charts} são reciclados.  Até quando estes são
+guardados de alguma forma (fotos, transcrições ou até no código
+mesmo), as discussões que levaram à solução são perdidas. Falar é um
+jeito muito eficiente de comunicação mas também muito efémero. Uma vez
+que a conversa acabou, é difícil obter rapidamente a informação
+buscada. Correios eletrônicos são muito menos eficientes para a
+comunicação mas têm um grande ganho na facilidade de busca. Num curto
+prazo, é evidente que a conversa é muito melhor que a escrita,
+especialmente em equipes pequenas. No entanto, num médio ou longo
+prazo, os ganhos da comunicação escrita podem superar (como eles o
+fazem em projetos livres) as perdas.
 
-\subsection{Cross reviewing}
+\subsection{Revisão cruzada}
 \label{subsec:crossrev}
 
-The third point that Reis presented was pretty specific to
-LaunchPad. Since LaunchPad is a platform used by other teams to
-develop their own project, when there is an API (Application
-Programming Interface) modification, a member from an external team
-that uses the software (preferably a different one each time) is asked
-to review the API change and its motivation. Such change cannot be
-added to the trunk of the repository unless it has been approved by
-the external reviewer. They call this a cross review of API changes
-or, simply, a cross review.
+O terceiro ponto que Reis apresentou foi bem específico ao
+LaunchPad. Como o LaunchPad é uma plataforma usada por outras equipes
+para que elas desenvolvam seus próprios projetos, quando há uma
+mudança na Interface de Programação da Aplicação (\emph{API -
+  Application Programming Interface}), um membro de uma equipe externa
+que usa o programa (preferenciamente uma pessoa diferente a cada vez)
+deve revisar a mudança da interface e os motivos que levaram a
+ela. Essa mudança não pode ser enviada ao ``galho'' principal do
+repositório a não ser que o revisor externo a aprove. Essa prática é
+conhecida como revisão cruzada das mudanças de API ou, simplesmente,
+uma revisão cruzada.
 
-This practice tackles a few problems at once. The commiter role
-partially solves the code review problem that is addressed with pair
-programming on agile methods. Having a cross review ensures that the
-API will be approved by two different developers.
+Essa prática mata alguns coelhos em uma cajadada só. O papel do
+\emph{commiter} resolve o problema da revisão de código que os métodos
+ágeis atacam com a programação em pares. A revisão cruzada garante que
+a mudança da interface é aprovada pelos usuários assim como os
+desenvolvedores.
 
-It also greatly improves documentation about that API since the
-conversation between the project developer and the user is logged
-through the mailing list. This way, future or other users can read and
-understand why the API was changed and how to use it when it is best
-suited for them. It also helps future changes and simplifications
-since it is easy to check whether the condition at the time of the
-change still holds on new versions.
+Ela também garante uma melhora considerável sobre aquela API já que a
+conversa entre o desenvolvedor do projeto e o usuário é arquivada pela
+lista de correio eletrônico. Desta forma, futuros usuários ou mesmo
+outros usuários atuais podem ler e entender porque a API mudou e como
+usá-la quando for necessário. Também fica mais fácil realizar mudanças
+no futuro e simplificações já que fica claro o que aquela API está
+querendo permitir e se aquilo ainda faz sentido nas novas versões.
 
-Finally, it also helps involving the user or client in the
-architectural decisions as well as ensures that he agrees on the
-changes. This helps discovering possible requirement problems and
-correcting them before they get implemented in the main code
-base. Obviously such practice can only apply to some level when the
-user is not a developer. Having an external review will help ensuring
-API clarity and document the changes but it might not detect
-requirement problems if the reviewer is not a user or client.
+Por fim, a revisão cruzada também ajuda a envolver o cliente nas
+decisões de arquitetura da solução e garante que ele está de acordo
+com as mudança realizada. Com isso, é mais fácil identificar um
+possível problema de requisitos e corrigí-lo antes que eles sejam
+implementados na base principal de código. Obviamente, esta prática só
+pode se aplicar até um certo nível quando o usuário não tem
+conhecimento técnico. Uma revisão externa pode ajudar a garantir a
+clareza da API e a documentar as mudanças mas ela não vai identificar
+problemas de requisitos se o revisor não for um cliente ou usuário.
 
-\section{Agile contributions to improve Open Source}
+\section{Contribuições de métodos ágeis para incrementar projetos de
+  Software Livre}
 \label{sec:agile-improve-os}
 
-Most of the problems pointed out so far are related to communication
-issues caused by the amount of people involved in a project and their
-various knowledge and cultures. Although in OS those matters are taken
-to a limit, distributed agile teams face some of the same problems
-\cite{Sutherland2007,Maurer2002}.
+A maioria dos problemas apontados até agora são relacionados a
+dificuldades de comunicação causados pela quantidade de pessoas
+envolvidas no projeto e seus vários conhecimentos e culturas. Apesar
+desses fatores serem levados ao extremo em projetos de software livre,
+equipes de métodos ágeis distribuídas encontram alguns dos mesmos
+problemas \cite{Sutherland2007,Maurer2002}.
 
-As Beck suggests \cite{Beck2008}, tools can improve the adoption and
-use of agile practices and, therefore, improve a development
-process. A fair amount of work has been directed to distributed pair
-programming tools\footnote{http://sf.net/projects/xpairtise/ - Last
-  accessed 02/10/2008} and studies \cite{Nagappan2003} but very few
-tools have been produced to support other practices. Since
-communication is at stake, a few other practices are related to it in
-agile methods. The following subsections will present those practices
-and the tools to improve the OS experience with agile development.
+Como Beck sugere \cite{Beck2008}, ferramentas pode melhorar a adoção e o uso de práticas ágeis e, desta forma, melhorar o processo de desenvolvimento. Uma quantidade considerável de trabalho já foi realizado na questão de ferramentas da programação em pares distribuída\footnote{http://sf.net/projects/xpairtise/ - Last
+  accessed 02/10/2008} e estudos a respeito \cite{Nagappan2003} mas pouco tem sido produzido par apoiar outras práticas. Como o problema está relacionado à comunicação, algumas práticas de métodos ágeis são relevantes. As próximas subseções vão apresentar essas práticas e as ferramentas sugeridas para facilitar a adoção de métodos ágeis na comunidade de software livre.
 
-\subsection{Informative Workspace}
+\subsection{Ambiente Informativo}
 \label{subsec:inform-worksp}
 
-This practice suggests that an agile team should work in an
-environment that gives them information regarding their work. Beck
-assigns a specific role, the tracker role, to the person (or persons)
-that should maintain this information available and updated to the
-team. With co-located teams, the tracker usually collects metrics
-\cite{Sato2007} automatically and selects a few of them to present in
-the workspace. Most of the objective metrics are related to the code
-base while subjective ones depend on developers' opinions.
+Essa prática sugere que uma equipe de métodos ágeis deveria trabalhar
+num ambiente que provê informações relacionadas ao trabalho. Beck
+\cite{XP01} atribui um papel específico, o de acompanhador, para uma
+pessoa (ou algumas pessoas) que deve manter essa informação disponível
+e atualizada para a equipe. Com equipes co-locadas, o acompanhador
+normalmente coleta métricas \cite{Sato2007} automaticamente e
+seleciona algumas delas para apresentá-las no ambiente. A maioria das
+métricas objetivas são relacionadas ao código fonte enquanto as
+métricas subjetivas costumam depender da opinião dos membros da
+equipe.
 
-Collecting those data is not a hard task but it is usually time
-consuming and does not produce immediate benefit to the software.
-This is probably the reason why it is very rare to find an OS project
-with updated metrics and data in their website. A tool that could
-improve such scenario would be a web-based plug in system with a
-built-in metrics collection as well as a way to add and present new
-metrics. Such tool should be available into OS forge applications to
-allow projects to easily connect them to their repository and web
-site.
+A coleta destes dados não é uma tarefa árdua mas normalmente consome
+um tempo considerável e não agrega um benefício imediato ao projeto. É
+provalvemente essa o motivo para a falta de métricas ou dados
+atualizados em páginas de projeto de software livre. Uma ferramenta
+que poderia melhorar esse cenários seria um sistema baseado em
+\emph{plug ins} com um conjunto inicial de métricas e uma forma de
+criar e apresentar novas métricas. Essas ferramentas deveriam estar
+disponíveis em incubadoras de software livre de forma a permitir que
+os projetos possam facilmente ligar seus repositórios e páginas à
+ferramenta.
 
-\subsection{Stories}
+\subsection{Histórias}
 \label{subsec:stories}
 
-Regarding the planning system, XP suggests that requirements should be
-collected in user story cards. The goal is to minimize the amount of
-effort required to discover the next step to make and being able to
-easily change those requirements priorities over time. OS projects
-usually are based on bug tracking systems to store those
-requirements. A missing feature is reported as a bug that should be
-corrected and discussions and patch suggestions are submitted related
-to that ``bug''. The problem with this approach is that changing
-priority and setting a release plan is very time consuming and relies
-on non documented assumptions (such as ``this release should solve
-buts with priority over 8'').  It is also very hard to obtain an
-overall view of all the requirements.
+Com relação ao sistema de planejamento, XP sugere que os requisitos
+deveriam ser coletados em cartões de história. O objetivo disto é
+reduzir a quantidade de esforço necessário para descobrir qual é o
+próximo passo a ser tomado e tornar fácil modificar essas prioridades
+ao longo do tempo. Projetos de software livre normalmente guardam seus
+requisitos em sistemas de rastreamento de erros. Quando se identifica
+a falta de uma funcionalidade, cadastra-se um erro que deveria ser
+corrigido e as discussões e sugestões de mudanças são enviadas para
+aquele ``erro''. O problema com essa abordagem é que mudar a
+prioridade desses ``erros'' e organizar um planejamento consome muito
+tempo e se basea em fatos que podem mudar com o tempo (tal como ``essa
+versão deveria resolver erros com prioridade acima de 8''). Também é
+muito difícil obter uma visão geral dos requisitos.
 
-Discovering what are the main priorities for the team quickly and
-being able to change those priorities according to the community's
-feedback is key to develop a working software. To help achieve this, a
-tool should be implemented to allow bugs to be seen as movable
-elements on a release planning. In order to benefit from the
-community's knowledge, the tool should also have the bug's priority
-and content set by the users in a similar way as Wikipedia manages its
-articles \cite{Surowiecki2004,Tapscott2006,Benkler2006}.
+Descobrir as principais prioridades para a equipe rapidamente e ser
+capaz de mudar essas prioridades de acordo com o \emph{feedback} é uma
+das chaves para desenvolver software funcional. Para poder atingir
+esse objetivo, uma ferramenta deveria ser desenvolvida para permitir
+que erros sejam vistos como objetos móveis num quadro de planejamento
+de versão. Para permitir que a comunidade envolvida possa colaborar
+com seu conhecimento, a ferramenta deveria apresentar a prioridade do
+erro assim como seu conteúdo de uma forma similar ao dos artigos da
+Wikipedia \cite{Surowiecki2004,Tapscott2006,Benkler2006}.
 
-\subsection{Retrospective}
+\subsection{Retrospectiva}
 \label{subsec:retrospect}
 
-This practice suggests that the team should get together in a physical
-place periodically to discuss the way the project is going. There are
-two issues in such practice in OS software teams. The first one is to
-have all members of the team present at the same time. The second one
-is to have them interact collectively in a shared area placing notes
-on time stating problems and good things they felt.
+Essa prática sugere que a equipe deveria se juntar num ambiente físico
+periodicamente para discutir o andamento do projeto. Existem dois
+problemas nessa prática em equipes de software livre. O primeiro é de
+que todos os membros da equipe devem estar presentes ao mesmo tempo no
+mesmo lugar. O segundo é que conseguir que eles interajam de forma
+coletiva numa área compartilhada adicionando notas numa linha temporal
+para apresentar os problemas que encontraram e as coisas positivas que
+aconteceram durante o período avaliado.
 
-When the team is co-located, this is usually done in a meeting room
-with a huge time line and coloured post-its. Our suggestion is to
-develop a web-based tool to allow such interaction relating the time
-line to the code repository base. The team would be able to annotate
-asynchronously the time line. The team leader would occasionally
-generate a report sent to all members as well as posted in the
-informative workspace.
+Quando a equipe está co-locada, basta juntar a equipe numa sala de
+reunião com uma linha do tempo grande na parede e distribuir papéis
+coloridos que eles possam colar na linha. A sugestão para equipes de
+software livre é desenvolver uma ferramenta baseada na internet para
+permitir que essas anotações sejam feitas numa linha do tempo virtual
+associada aos código fonte. Desta forma, mensagens de integração de
+código poderiam conter a anotação que seriam automaticamente exibidos
+na linha do tempo. Além disso, a equipe poderia anotar a linha do
+tempo de forma assíncrona para permitir comentários posteriores. O
+líder da equipe poderia ocasionalmente gerar um relatório para todos
+os membros da equipe além de exibir a linha do tempo no ambiente
+informativo.
 
-\subsection{Stand up meetings}
+\subsection{Papo em pé}
 \label{subsec:stand-up}
 
-Stand up meetings, originally suggested in the Scrum methodology,
-demands that the whole team gets together and each member explains
-quickly what they have been doing and intend to do. This practice
-shares the same problem as the retrospective. It involves having the
-team together at the same time. Several OS projects already have a
-partial solution to this practice using an IRC channel to centralize
-the discussions during development time. Although it does not ensure
-everyone gets to know what other members are doing, it helps
-synchronizing work.
+Papos em pé, originalmente sugeridos pelo Scrum, pede que toda a
+equipe se junte e cada membro explique rapidamente o que eles têm
+feito e pretendem fazer a seguir. Essa prática compartilha dos mesmos
+problemas da retrospectiva. Ela envolve reunir a equipe ao mesmo
+tempo. Muitos projetos de software livre usam canais de IRC
+(\emph{Internet Relay Chat}) para resolverem parcialmente esse
+problema e para centralizar as discussões durante o
+desenvolvimento. Apesar disso não garantir que todos sabem o que cada
+um está fazendo, ajuda a sincronizar o trabalho.
 
-To ensure members get the required knowledge, we suggest that those
-IRC channels should be logged and should present the last few messages
-to newcomers at every log in. It should also be possible for members
-to leave notes from that channel to the bug tracking system as well as
-messages to other contributors. On IRC channel, this sort of solution
-would usually be implemented by a bot which we intend to associate to
-the forge system that should host the previous features.
+Para garantir que os membros obtenham a informação necessária, a
+sugestão é de que a comunicação que acontece nesses canais IRC seja
+salva e exibida aos usuários que se acabam de se conectar. Também
+deveria ser possível que os usuários deixem anotações a partir desse
+canal para o sistema de rastreamento de erros assim como mensagens
+para outros contribuidores. No canal IRC, esse tipo de solução
+normalmente é implementada por um robô que deveria estar ligado à
+incubadora do projeto que contém as ferramentas previamente sugeridas.
