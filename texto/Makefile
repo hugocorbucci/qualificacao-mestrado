@@ -11,7 +11,7 @@ PDFLATEX  = pdflatex
 BIBTEX    = bibtex
 MAKEINDEX = makeindex
 CHAPTERS=cap-agile-to-open.tex cap-conclusoes.tex cap-definicoes.tex cap-introducao.tex cap-open-to-agile.tex
-APENDIXES=ape-pesquisas.tex
+APENDIXES=ape-pesquisaEA.tex ape-pesquisaOS.tex ape-pesquisaMA.tex
 
 open: pdf
 	open $(BASE_NAME).pdf

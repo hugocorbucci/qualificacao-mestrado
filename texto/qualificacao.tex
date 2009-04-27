@@ -4,7 +4,7 @@
 % Obs: Leia previamente o texto do arquivo Readme.txt
 %
 
-\documentclass[11pt,twoside,letterpaper]{book}
+\documentclass[12pt,twoside,letterpaper]{book}
 
 % ---------------------------------------------------------------------------- %
 % Pacotes 
@@ -28,6 +28,7 @@
 \usepackage{caption}
 \usepackage[pagebackref,colorlinks=true,urlcolor=red,citecolor=green,linkcolor=blue]{hyperref}
 \usepackage[letterpaper,top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm]{geometry}
+\usepackage[toc,page]{appendix}
 
 % ---------------------------------------------------------------------------- %
 % Alguns comandos
@@ -179,6 +180,7 @@ processes.
 
 \chapter{Lista de Abreviaturas}
 \begin{tabular}{ll}
+ 		SL       & Software Livre.\\
  		OSS         & Software de código aberto (\emph{Open Source Software}).\\
  		XP       & Programação Extrema (\emph{Extreme Programming}).\\
  		FLOSS       & Software Gratuito, Livre e de código aberto (\emph{Free, Libre and Open Source
@@ -186,6 +188,7 @@ processes.
  		BDD       & Desenvolvimento Dirigido por Comportamento (\emph{Behaviour Driven Development}).\\
  		IRC       & Papo Retransmitido pela Internet (\emph{Internet Relay Chat}).\\
  		FISL       & Fórum Internacional de Software Livre.\\
+ 		API       & Interface de Programação da Aplicação (\emph{Application Programming Interface}).\\
 \end{tabular}
 
 %\chapter{Lista de Símbolos}
@@ -193,8 +196,8 @@ processes.
 %		$\omega$    & Freqüência angular.\\
 %\end{tabular}
 
-\listoffigures               % lista de Figuras
-\listoftables                % lista de Tabelas
+%\listoffigures               % lista de Figuras
+%\listoftables                % lista de Tabelas
 
 % ---------------------------------------------------------------------------- %
 % Capítulos
@@ -208,9 +211,12 @@ processes.
 \input cap-definicoes        % associado ao arquivo: 'cap-definicoes.tex'
 \input cap-open-to-agile     % associado ao arquivo: 'cap-open-to-agile.tex'
 \input cap-agile-to-open     % associado ao arquivo: 'cap-agile-to-open.tex'
+\input cap-perspectivas     % associado ao arquivo: 'cap-perspectivas.tex'
 \input cap-conclusoes        % associado ao arquivo: 'cap-conclusoes.tex'
 \appendix
-\include{ape-pesquisas}      % associado ao arquivo: 'ape-pesquisas.tex'
+\input ape-pesquisaEA      % associado ao arquivo: 'ape-pesquisaEA.tex'
+\input ape-pesquisaOS      % associado ao arquivo: 'ape-pesquisaOS.tex'
+\input ape-pesquisaMA      % associado ao arquivo: 'ape-pesquisaMA.tex'
 
 % ---------------------------------------------------------------------------- %
 % Bibliografia
