@@ -2,19 +2,129 @@
 \chapter{Próximos passos}
 \label{cap:perspectivas}
 
+O trabalho apresentado dá indícios de que o estado atual das
+comunidades de software livre e de métodos ágeis pode ser melhorado
+pela união dos conhecimentos e soluções encontradas em cada um destes
+ambientes. Este projeto pretende dar alguns dos passos necessários
+para essa união que estão listados na Seção \ref{sec:atividades} com
+as metas apresentadas na Seção \ref{sec:cronograma}. Por fim, a Seção
+\ref{sec:sugestoes} indica algumas das atividades que podem trazer
+benefícios a essa união mas que não serão cobertas por este trabalho.
 
 \section{Atividades a serem realizadas}
 \label{sec:atividades}
 
+Após revisão das pesquisas disponíveis nos apendêncies \ref{ape:MA} e
+\ref{ape:OS}, ambas pesquisas serão disponibilizadas na Internet e
+divulgados nos principais eventos de cada uma das comunidades. Os
+principais objetivos seriam o décimo Fórum Internacional de Software
+Livre (FISL 10.0) do lado da comunidade de software livre e a Agile
+2009 do lado da comunidade de métodos ágeis. Se possível, outros
+vetores de divulgação também serão usados para tentar obter o mais
+número de respostas possíveis.
 
-\section{Cronograma}
+As pesquisas usarão um sistema a ser determinado que permite a
+identificação dos usuários para evitar o preenchimento da pesquisa por
+robôs assim como duplicatas. Esse sistema é uma das atividades que
+deverão ser desenvolvidas como parte desse trabalho. O sistema deverá
+contar com as funcionalidades necessárias para a elaboração das
+pesquisas assim como o preenchimento das respostas de acordo com a
+descrição anterior. Além disso, ele deverá fornecer um módulo de
+relatório que permite visualizar os dados gerais facilmente.
+
+Os resultados das pesquisas serão usados na identificação dos
+principais problemas de comunicação encontrados por cada uma das
+comunidades na adoção das técnicas da outra. Quando esses problemas
+forem identificados, espera-se criar um conjunto de pequenos
+aplicativos que ajudem a resolver os problemas encontrados. A idéia é
+de que esses aplicativos sejam pequenos scripts em Javascript que
+permitam que o usuário mantenha dados atualizados sobre seu projeto
+com consultas ao seu repositório de código.
+
+Por fim, os resultados das pesquisas serão condensados em um relatório
+que será anexado ao aplicativo descrito no parágrafo anterior e será
+elaborada uma dissertação com a análise desses resultados e com as
+conclusões obtidas do trabalho de pesquisa e de desenvolvimento.
+
+\section{Metas para as atividades}
 \label{sec:cronograma}
 
-% ------------------------------------------------------
-\section{Sugestões para Pesquisas Futuras} 
+Com relação às pesquisas, a meta é de que a pesquisa direcionada à
+comunidade de software livre esteja disponíveis \emph{online} até o
+dia 15 de Junho de 2009. Desta forma, sua divulgação poderia ser
+realizada durante a semana que precede o FISL 10.0. Espera-se manter a
+pesquisa disponível por, pelo menos, 2 meses. Desta forma, espera-se
+colher os dados relativos a essa pesquisa por volta do dia 15 de
+Agosto de 2009.
 
-\begin{itemize}
-	\item Elaborar uma metodologia direcionada para o
-          desenvolvimento de software livre com equipes distribuídas
-          em um ambiente ágil.
-\end{itemize}
+Já a pesquisa direcionada à comunidade de métodos ágeis deveria estar
+disponível a partir de dia 1 de Agosto de 2009 para ser divulgada
+durante as duas semanas que antecedem a Agile 2009. Mantendo o mesmo
+intervalo de tempo para coletar as respostas, os resultados seriam
+coletados por volta do dia 1 do Outubro 2009.
+
+A avaliação das pesquisas será realizada de forma independente num
+primeiro momento durante as duas semanas que seguem a coleta dos
+resultados. Em seguida, os dados das pesquisas serão cruzados para
+tentar identificar as respostas provindas dos mesmos indivíduos nas
+duas comunidades. Desta forma, espera-se concluir a avaliação dos
+resultados das pesquisas por volta do dia 1 de Novembro de 2009.
+
+O desenvolvimento das ferramentas depende apenas parcialmente dos
+resultados obtidos na análise conjunta das pesquisas e por isso pode
+ter início antes dos resultados completos serem coletados. Desta
+forma, espera-se montar a infra-estrutura para desenvolvimento e
+elaboração das ferramentas enquanto a pesquisa ocorre. Espera-se
+dedicar apenas 3 meses de desenvolvimento após o término de ambas
+pesquisas e da avaliação dos resultados. Com isso, a meta é finalizar
+o desenvolvimento das ferramentas até o dia 1 de fevereiro 2010.
+
+A dissertação decorrente do trabalho deverá evoluir conforme o
+trabalho avança e, por isso, deveria acompanhar o desenvolvimento da
+ferramenta com um período de um mês para revisão e finalização do
+texto. Com isso, a dissertação deveria estar pronta em março de 2010
+como mostra a figura \ref{tab:crono}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    & 5/9 & 6/9 & 7/9 & 8/9 & 9/9 & 10/9 & 11/9 & 12/9 &
+    1/10 & 2/10 & 3/10\\
+    \hline
+    Pesquisa Software Livre & X & X & X & & & & & & & &\\
+    \hline
+    Pesquisa Métodos Ágeis & & & & X & X & X & & & & &\\
+    \hline
+    Análise  & & & & X & X & X & X & & & &\\
+    \hline
+    Desenvolvimento & & & X & X & X & X & X & X & X & X & \\
+    \hline
+    Dissertação & & & & X & X & X & X & X & X & X & X \\
+    \hline
+  \end{tabular}
+  \caption{Prazos esperados para as atividades}
+  \label{tab:crono}
+\end{table}
+
+% ------------------------------------------------------
+\section{Sugestões para Pesquisas Futuras}
+\label{sec:sugestoes}
+
+Este trabalho não irá se aprofundar na elaboração de um método de
+desenvolvimento que se adere aos princípios ágeis com foco na produção
+de software livre mas este, com certeza, é um tópico interessante para
+futuras pesquisas. Imaginar uma forma de balancear o desenvolvimento e
+a resposta às mudanças descobertas com a manutenção da comunidade e
+atração de colaboradores pode trazer grandes avanços à maneira com que
+os métodos ágeis lidam com seus clientes.
+
+Outro trabalho interessante seria o de tentar analisar os impactos que
+a cultura associada a uma linguagem de programação tem nos projetos
+elaborados nessa linguagem. A cultura de testes automatizados tem
+crescido muito nos últimos tempos mas algumas comunidades como a de
+Ruby e Python têm tido um destaque nesse quesito. Isso vem da forma
+como a linguagem é apresentada ou da comunidade que a cerca. Com isso,
+como uma determinada comunidade (digamos a de métodos ágeis) pode
+influenciar os projetos criados simplesmente criando boas ferramentas
+para suas práticas nas linguagens usadas.
