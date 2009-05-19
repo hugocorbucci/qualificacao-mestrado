@@ -1,5 +1,5 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Métodos ágeis no contexto do Software Livre}
+\chapter{Métodos Ágeis no Contexto do Software Livre}
 \label{cap:agile}
 
 Na Agile 2008, Mary Poppendieck conduziu um
@@ -19,7 +19,7 @@ atualmente. A Seção \ref{sec:agile-improve-os} apresenta como a
 criação dessa solução poderia ajudar tanto o software livre quanto a
 comunidade de métodos ágeis.
 
-\section{Princípios do Software Livre interesantes em métodos ágeis}
+\section{Princípios do Software Livre Interesantes em Métodos Ágeis}
 \label{sec:foss-over-agile}
 
 Reis é um desenvolvedor Brasileiro de software livre que trabalha para
@@ -37,21 +37,23 @@ de desenvolvimento que seja público e transparente.  Por fim, o último
 dos sistemas que é usado para garantir a comunicação e a clareza do
 código.
 
-\subsection{O papel do \emph{commiter}}
+\subsection{O Papel do \emph{Commiter}}
 \label{subsec:commiter}
+
+%TODO melhorar
 
 Parte do valor que foi identificado no software livre foi o papel do
 \emph{commiter}. Um \emph{commiter} é uma pessoa que tem direitos de
 adicionar código fonte ao ``galho''\footnote{Um galho (\emph{branch})
-  de um repositório é uma ramificação estrutura de diretórios que
+  de um repositório é uma ramificação da estrutura de diretórios que
   guarda os arquivos} principal do repositório de controle de
 versões. O ``galho'' principal é a parte do código que será empacotada
 para formar uma nova versão do programa. Aos olhos da comunidade do
-software, o \emph{commiter} é uma pessoa confiável que é muito boa
-para avaliar a qualidade do código fonte. Este é o meio encontrado
-pelas comunidades de software livre para revisar a grande maioria do
-código fonte de forma a reduzir a quantidade de erros e melhorar a
-clareza do código.
+software, o \emph{commiter} é uma pessoa confiável que é muito
+qualificada para avaliar a qualidade do código fonte. Este é o meio
+encontrado pelas comunidades de software livre para revisar a grande
+maioria do código fonte de forma a reduzir a quantidade de erros e
+melhorar a clareza do código.
 
 A maioria dos projetos de software livre tem um grupo muito pequeno de
 \emph{commiters}. Frequentemente o líder do projeto é o único
@@ -92,22 +94,23 @@ ajuda do ponto de vista técnico em alguma parte de seu
 trabalho. Alguns dos problemas levantados por uma equipe podem ser
 causados por decisões ou por dificuldades técnicas. Neste caso, se o
 líder não tiver conhecimento técnico, ele pode encontrar dificuldades
-para cumprir sua função. Nestes casos, é comum o líder ter ajuda de um
-consultor técnico que pode ser um membro da equipe ou uma pessoa de
-fora.
+para cumprir sua função. Para resolver este problema, é comum que o
+líder tenha a ajuda de um consultor técnico que pode ser um membro da
+equipe ou uma pessoa de fora.
 
 Se este consultor técnico for um membro da equipe, parece natural que
 ele assuma o papel do \emph{commiter}. Isso permitiria uma revisão do
-código fonte produzido melhorando então a clareza do código. Isso
-poderia reforçar a revisão de código contínua realizada durante a
+código fonte produzido melhorando então a clareza do código.
+% TODO Melhorar como isso se encaixa no texto
+Isso poderia reforçar a revisão de código contínua realizada durante a
 programação em pares. Note, no entanto, que a revisão de código
 realizada durante a programação em pares tem como objetivo principal a
 redução de erros e não é obrigatoriamente eficiente no aumento da
 clareza do código. Isso se dá porque quando um par trabalha em uma
-tarefa, ambas pessoas se imergem num determinado trecho de código e
-numa linha de pensamento. Para ambos os envolvidos, determinado código
-pode ser muito claro devido o contexto em que eles se encontram mas
-pode ser muito complexo quando o leitor não está na mesma linha de
+tarefa, ambas pessoas mergulham num determinado trecho de código e
+numa linha de pensamento. Para ambos os envolvidos, certo trecho
+código pode ser muito claro devido o contexto em que eles se encontram
+mas pode ser muito complexo quando o leitor não está na mesma linha de
 pensamento.
 
 A revisão feita pelo \emph{commiter} dificilmente será mais eficiente
@@ -117,8 +120,8 @@ possíveis casos do que o par que trabalhou para cumprir este
 objetivo. No entanto, ela oferece um olhar fresco ao código mais
 semelhante ao olhar dado por um desenvolvedor no futuro. Deste ponto
 de vista, o revisor poderá questionar o código da mesma forma que
-alguém no futuro questionaria resolvendo, desta forma, os principais
-problemas relacionados à clareza do código produzido.
+alguém no futuro questionaria. Desta forma, seriam resolvidos os
+principais problemas relacionados à clareza do código produzido.
 
 De qualquer forma, o trabalho de revisão tem duas consequências
 diretas e evidentes. A primeira é de que o tempo necessário para que
@@ -144,8 +147,10 @@ de outros. Desta forma, toda a equipe passa a entender o valor de cada
 um dos papéis e entende melhor como escrever código que seja claro
 para um revisor.
 
-\subsection{Resultados públicos}
+\subsection{Resultados Públicos}
 \label{subsec:publicity}
+
+%TODO MELHORAR MENOS :)
 
 Outro ponto importante foi a divulgação pública de todos os resultados
 relacionados ao projeto. De acordo com Reis, programas proprietários
@@ -160,7 +165,7 @@ Em métodos ágeis, o resultado dos testes e o sistema de rastreamento
 de erros são informações muito importantes para a equipe de
 desenvolvimento. Apesar disso, nenhum métodos afirma explicitamente
 que o cliente e os usuários deveriam estar em contato direto com essas
-ferramentas. No entanto, é acordo geral que o cliente deveria ser
+ferramentas. No entanto, é senso comum que o cliente deveria ser
 parte da equipe de desenvolvimento. Com a equipe deve estar sempre em
 contato com essas ferramentas, pode-se interpretar que o cliente
 também deveria usar a ferramenta como o resto da equipe. Infelizmente,
@@ -206,7 +211,7 @@ especialmente em equipes pequenas. No entanto, num médio ou longo
 prazo, os ganhos da comunicação escrita podem superar (como eles o
 fazem em projetos livres) as perdas.
 
-\subsection{Revisão cruzada}
+\subsection{Revisão Cruzada}
 \label{subsec:crossrev}
 
 O terceiro ponto que Reis apresentou foi bem específico ao
@@ -245,15 +250,15 @@ conhecimento técnico. Uma revisão externa pode ajudar a garantir a
 clareza da API e a documentar as mudanças mas ela não vai identificar
 problemas de requisitos se o revisor não for um cliente ou usuário.
 
-\section{Contribuições de métodos ágeis no Software Livre}
+\section{Contribuições de Métodos Ágeis no Software Livre}
 \label{sec:agile-improve-os}
 
 A maioria dos problemas apontados até agora são relacionados a
 dificuldades de comunicação causados pela quantidade de pessoas
-envolvidas no projeto e seus vários conhecimentos e culturas. Apesar
-desses fatores serem levados ao extremo em projetos de software livre,
-equipes de métodos ágeis distribuídas encontram alguns dos mesmos
-problemas \cite{Sutherland2007,Maurer2002}.
+envolvidas no projeto separação física e seus vários conhecimentos e
+culturas. Apesar desses fatores serem levados ao extremo em projetos
+de software livre, equipes de métodos ágeis distribuídas encontram
+alguns dos mesmos problemas \cite{Sutherland2007,Maurer2002}.
 
 Como Beck sugere \cite{Beck2008}, ferramentas pode melhorar a adoção e
 o uso de práticas ágeis e, desta forma, melhorar o processo de
@@ -326,7 +331,9 @@ Essa prática sugere que a equipe deveria se juntar num ambiente físico
 periodicamente para discutir o andamento do projeto. Existem dois
 problemas nessa prática em equipes de software livre. O primeiro é de
 que todos os membros da equipe devem estar presentes ao mesmo tempo no
-mesmo lugar. O segundo é que conseguir que eles interajam de forma
+mesmo lugar.
+%TODO Melhorar essa frase que está um lixo
+O segundo é que conseguir que eles interajam de forma
 coletiva numa área compartilhada adicionando notas numa linha temporal
 para apresentar os problemas que encontraram e as coisas positivas que
 aconteceram durante o período avaliado.
@@ -344,7 +351,7 @@ líder da equipe poderia ocasionalmente gerar um relatório para todos
 os membros da equipe além de exibir a linha do tempo no ambiente
 informativo.
 
-\subsection{Papo em pé}
+\subsection{Papo em Pé}
 \label{subsec:stand-up}
 
 Papos em pé, originalmente sugeridos em Scrum, pede que toda a equipe
@@ -360,8 +367,15 @@ um está fazendo, ajuda a sincronizar o trabalho.
 Para garantir que os membros obtenham a informação necessária, a
 sugestão é de que a comunicação que acontece nesses canais IRC seja
 salva e exibida aos usuários que se acabam de se conectar. Também
-deveria ser possível que os usuários deixem anotações a partir desse
-canal para o sistema de rastreamento de erros assim como mensagens
-para outros contribuidores. No canal IRC, esse tipo de solução
-normalmente é implementada por um robô que deveria estar ligado à
-incubadora do projeto que contém as ferramentas previamente sugeridas.
+deveria ser possível permitir que os usuários deixem anotações a
+partir desse canal para o sistema de rastreamento de erros assim como
+mensagens para outros contribuidores. No canal IRC, esse tipo de
+solução normalmente é implementada por um robô que deveria estar
+ligado à incubadora do projeto que contém as ferramentas previamente
+sugeridas.
+
+Tendo delineado as práticas em que há uma possibilidade de
+aproveitamento em cada uma das respectivas comunidades, pode-se traçar
+o plano de trabalho proposto. O próximo capítulo (Capítulo
+\ref{cap:perspectivas}) apresenta o trabalho que se pretende elaborar
+assim como as metas para sua realização.
