@@ -40,16 +40,27 @@ código.
 \subsection{O Papel do \emph{Commiter}}
 \label{subsec:commiter}
 
-%TODO melhorar
-
 Parte do valor que foi identificado no software livre foi o papel do
-\emph{commiter}. Um \emph{commiter} é uma pessoa que tem direitos de
-adicionar código fonte ao ``galho''\footnote{Um galho (\emph{branch})
-  de um repositório é uma ramificação da estrutura de diretórios que
-  guarda os arquivos} principal do repositório de controle de
-versões. O ``galho'' principal é a parte do código que será empacotada
-para formar uma nova versão do programa. Aos olhos da comunidade do
-software, o \emph{commiter} é uma pessoa confiável que é muito
+\emph{commiter}. Como esse papel tem uma relação relativamente
+complicada com métodos ágeis, essa subseção será divida em quatro
+partes. A primeira descreve o que é um \emph{commiter}, a segunda
+apresenta como esse papel é distribuído em métodos ágeis, a terceira
+aborda as diferenças e semelhanças entre a revisão realizada durante a
+programação em pares e a revisão feita pelo \emph{commiter} e, por
+fim, a quarta apresenta as sugestões de adaptação desse papel em
+métodos ágeis.
+
+% TODO Ajustar o conteúdo de cada uma das subsubseções.
+
+\subsubsection{O que é um \emph{commiter}}
+
+Um \emph{commiter} é uma pessoa que tem direito de adicionar,
+modificar e remover código fonte ao ``galho''\footnote{Um galho
+  (\emph{branch}) de um repositório é uma ramificação da estrutura de
+  diretórios que guarda os arquivos} principal do repositório de
+controle de versões. O ``galho'' principal é a parte do código que
+será empacotada para formar uma nova versão do programa. Aos olhos da
+comunidade do software, o \emph{commiter} é uma pessoa confiável muito
 qualificada para avaliar a qualidade do código fonte. Este é o meio
 encontrado pelas comunidades de software livre para revisar a grande
 maioria do código fonte de forma a reduzir a quantidade de erros e
@@ -59,98 +70,121 @@ A maioria dos projetos de software livre tem um grupo muito pequeno de
 \emph{commiters}. Frequentemente o líder do projeto é o único
 \emph{commiter} e todos os \emph{patches} devem passar por sua
 aprovação. De acordo com Riehle \cite{Riehle2007}, existem três níveis
-na hierarquia tradicional de um projeto de software livre. O primeiro
-nível é o de usuário. Usuários têm o direito de usar o programa,
-relatar problemas e pedir funcionalidades. O segundo nível é o de
-contribuidor. A promoção entre o primeiro e o segundo nível é
-implícita. Ela acontece quando um \emph{commiter} aceita os
-\emph{patches} do usuário e os envia ao repositório de código no
-``galho'' principal. Normalmente, ninguém exceto o \emph{commiter} e o
-contribuidor sabem dessa promoção. O terceiro papel é o de
-\emph{commiter}. Neste nível, a transição é explícita. Contribuidores
-e \emph{commiters} demonstram apoio a um determinado contribuidor e
-reconhecem publicamente a qualidade geral de seu trabalho. Por isso,
-atingir o nível de \emph{commiter} é um feito valioso que significa
-que o contribuidor produz código de ótima qualidade e está realmente
-envolvido com o desenvolvimento do projeto.
+na hierarquia tradicional de um projeto de software livre.
+\begin{itemize}
+\item O primeiro nível é o de usuário.
 
-Métodos ágeis delegam esse papel para cada um dos desenvolvedores da
-equipe. No \emph{workshop} sugeriram que alguma forma de controle no
-``galho'' principal poderia melhorar ainda mais a simplicidade do
-código fonte do aplicativo de produção. Na maioria dos métodos ágeis,
-uma equipe deveria ter um líder (um \emph{Scrum Master} em Scrum, um
-treinador em XP, etc...) que é mais experiente naquele método ágil que
-o resto da equipe
+  Usuários têm o direito de usar o programa, relatar problemas e pedir
+  funcionalidades.
+\item O segundo nível é o de contribuidor.
 
-O líder da equipe é responsável por lembrar a equipe de se ater às
-práticas escolhidas. Ele também deve ajudar a equipe a resolver os
-problemas encontrados e idealmente, transformar todos os membros da
-equipe em possíveis líderes de forma a tornar-se ``inútil''. Para
-cumprir essa função, o líder não precisa obrigatoriamente ter
-conhecimentos técnicos apurados.
+  A promoção entre o primeiro e o segundo nível é implícita. Ela
+  acontece quando um \emph{commiter} aceita os \emph{patches} do
+  usuário e os envia ao repositório de código no ``galho''
+  principal. Normalmente, ninguém, exceto o \emph{commiter} e o
+  contribuidor, sabe dessa promoção.
+\item O terceiro papel é o de \emph{commiter}.
 
-No entanto, uma equipe de desenvolvimento costumeiramente precisa de
-ajuda do ponto de vista técnico em alguma parte de seu
-trabalho. Alguns dos problemas levantados por uma equipe podem ser
-causados por decisões ou por dificuldades técnicas. Neste caso, se o
-líder não tiver conhecimento técnico, ele pode encontrar dificuldades
-para cumprir sua função. Para resolver este problema, é comum que o
-líder tenha a ajuda de um consultor técnico que pode ser um membro da
-equipe ou uma pessoa de fora.
+  Neste nível, a transição é explícita. Contribuidores e
+  \emph{commiters} demonstram apoio a uma determinada pessoa e
+  reconhecem publicamente a qualidade geral de seu trabalho. Por isso,
+  atingir o nível de \emph{commiter} é um feito valioso que significa
+  que essa pessoa produz código de ótima qualidade e está realmente
+  envolvido com o desenvolvimento do projeto.
+\end{itemize}
 
-Se este consultor técnico for um membro da equipe, parece natural que
-ele assuma o papel do \emph{commiter}. Isso permitiria uma revisão do
-código fonte produzido melhorando então a clareza do código.
-% TODO Melhorar como isso se encaixa no texto
-Isso poderia reforçar a revisão de código contínua realizada durante a
-programação em pares. Note, no entanto, que a revisão de código
-realizada durante a programação em pares tem como objetivo principal a
-redução de erros e não é obrigatoriamente eficiente no aumento da
-clareza do código. Isso se dá porque quando um par trabalha em uma
-tarefa, ambas pessoas mergulham num determinado trecho de código e
-numa linha de pensamento. Para ambos os envolvidos, certo trecho
-código pode ser muito claro devido o contexto em que eles se encontram
-mas pode ser muito complexo quando o leitor não está na mesma linha de
-pensamento.
+\subsubsection{O papel do \emph{commiter} em métodos ágeis}
+
+Métodos ágeis delegam o papel do \emph{commiter} para cada um dos
+desenvolvedores da equipe. No \emph{workshop} sugeriram que alguma
+forma de controle no ``galho'' principal de um projeto ágil poderia
+melhorar ainda mais a simplicidade do código fonte do aplicativo de
+produção.
+
+Na maioria dos métodos ágeis, uma equipe deveria ter um líder (um
+\emph{Scrum Master} em Scrum, um treinador em XP, etc...)  que é mais
+experiente naquele método ágil que o resto da equipe. O líder da
+equipe é responsável por lembrar a equipe de se ater às práticas
+escolhidas. Ele também deve ajudar a equipe a resolver os problemas
+encontrados e idealmente, transformar todos os membros da equipe em
+possíveis líderes de forma a tornar-se ``inútil''.
+
+Para cumprir essa função, o líder não precisa obrigatoriamente ter
+conhecimentos técnicos apurados. No entanto, uma equipe de
+desenvolvimento costumeiramente precisa de ajuda do ponto de vista
+técnico em alguma parte de seu trabalho. Alguns dos problemas
+levantados por uma equipe podem ser causados por decisões ou por
+dificuldades técnicas. Neste caso, se o líder não tiver conhecimento
+técnico, ele pode encontrar dificuldades para cumprir sua função. Para
+resolver este problema, é comum que o líder tenha a ajuda de um
+consultor técnico que pode ser um membro da equipe ou uma pessoa de
+fora.
+
+Se este consultor técnico for um membro da equipe, ele tem,
+indiretamente, a responsabilidade de fazer com que a equipe mantenha
+uma boa qualidade de código. Pensando assim, o responsável técnico tem
+a função de \emph{commiter} do projeto mas realiza seu trabalho
+lembrando aos programadores de que seu código deve estar sempre
+legível, claro e com testes passando.
+
+\subsubsection{Semelhanças e diferenças da revisão}
+
+O papel ativo de revisor que o \emph{commiter} tem em projetos de
+software livre é encontrado no co-piloto de uma dupla de programação
+em pares. Note, no entanto, que a revisão de código realizada durante
+a programação em pares tem como objetivo principal a redução de erros
+e não é obrigatoriamente eficiente no aumento da clareza do
+código. Isso se dá porque, quando um par trabalha em uma tarefa, ambas
+pessoas mergulham em um determinado trecho de código e criam juntas
+uma linha de pensamento. Para ambos os envolvidos, o tal trecho código
+pode ser muito claro graça ao contexto e à linha de pensamento que
+eles criaram. Mas, para alguém que não acompanhou essa linha, o código
+pode ser muito complexo se ele não deixar indício do pensamento que
+deve ser seguido.
 
 A revisão feita pelo \emph{commiter} dificilmente será mais eficiente
 que a do par para reduzir a quantidade de erros já que o revisor
 costuma ter menos tempo para pensar sobre o problema e entender os
-possíveis casos do que o par que trabalhou para cumprir este
-objetivo. No entanto, ela oferece um olhar fresco ao código mais
-semelhante ao olhar dado por um desenvolvedor no futuro. Deste ponto
-de vista, o revisor poderá questionar o código da mesma forma que
-alguém no futuro questionaria. Desta forma, seriam resolvidos os
-principais problemas relacionados à clareza do código produzido.
+possíveis casos envolvidos. Enquanto o par que trabalhou no código
+teve exatamente este objetivo. No entanto, o \emph{commiter} traz um
+olhar fresco ao código que é muito mais semelhante ao olhar de um
+desenvolvedor qualquer no futuro. Deste ponto de vista, é mais
+provável que o revisor questione o código de forma semelhante àquela
+que outra pessoa no futuro faria. Sendo assim, o \emph{commiter} pode
+evitar os principais problemas relacionados à clareza do código
+produzido.
 
 De qualquer forma, o trabalho de revisão tem duas consequências
 diretas e evidentes. A primeira é de que o tempo necessário para que
 uma mudança seja incorporada ao ``galho'' principal do código aumenta
-consideravelmente já que tipicamente são necessárias algumas conversas
-entre o revisor e os autores do código. A segunda é que o trabalho do
-revisor, se ele for único, é considerável já que ele deve ler todo
-código que deve ir para o ``galho'' principal, tentar entendê-lo e
-expressar suas dúvidas aos autores.
+consideravelmente já que, tipicamente, são necessárias algumas
+conversas entre o revisor e os autores do código. A segunda é que o
+trabalho do revisor, se ele for único, é considerável já que ele deve
+ler todo código que deve ir para o ``galho'' principal, tentar
+entendê-lo e expressar suas dúvidas aos autores.
 
-Por este último motivo, dar o papel de \emph{commiter} ao consultor
-técnico significaria criar um gargalo de incorporação de código. A
-criação de gargalos é altamente indesejável do ponto de vista de
-métodos ágeis já que deseja-se minimizar o risco do projeto
-parar. Desta forma, a sugestão é de manter um pequeno conjunto de
-desenvolvedores como \emph{commiters} e fazer o papel circular entre
-os membros da equipe. Ao trocar os membros do conjunto de
-\emph{commiters}, permite-se uma maior distribuição do conhecimento e
-reduz-se a aparente concentração de poder desse papel. A troca também
-permite que aqueles que foram \emph{commiters} possam, por sua vez,
-serem autores de alguns trechos de código que passarão por avaliação
-de outros. Desta forma, toda a equipe passa a entender o valor de cada
-um dos papéis e entende melhor como escrever código que seja claro
-para um revisor.
+\subsubsection{Sugestões para adaptar o papel aos métodos ágeis}
+
+Considerando os pontos apresentados no fim da seção anterior, dar o
+papel de \emph{commiter} ao consultor técnico de uma equipe ágil
+significaria criar um gargalo de incorporação de código. A Teoria das
+Restrições %TODO Achar referência
+(que é muito ligada aos métodos ágeis) afirma que deve-se eliminar os
+gargalos para maximizar a produtividade de um equipe.
+
+Sendo assim, a proposta é de manter um pequeno conjunto de
+desenvolvedores da equipe como \emph{commiters} e fazer o papel
+circular entre os membros da equipe. Ao trocar os membros do conjunto
+de \emph{commiters}, permite-se uma maior distribuição do conhecimento
+e reduz-se a aparente concentração de poder desse papel. A troca
+também permite que aqueles que foram \emph{commiters} possam, por sua
+vez, serem autores de alguns trechos de código que passarão por
+avaliação de outros. Desta forma, toda a equipe passa a entender o
+valor de cada um dos papéis e entende melhor como escrever código que
+seja claro para um revisor.
 
 \subsection{Resultados Públicos}
 \label{subsec:publicity}
-
-% TODO MELHORAR MENOS :)
 
 Outro ponto importante da discussão foi a divulgação pública de todos
 os resultados relacionados ao projeto. De acordo com Reis, programas
