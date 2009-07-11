@@ -476,7 +476,7 @@ function create_q24() {
 					carpeInit();			
 			};
 	};
-	question.appendChild(create_radio_span(24, 'q24_6Peopleworkingwithyo', choices, distribute_functions));
+	question.appendChild(create_radio_span(24, 'q24_6Peopleworkingwithyo', choices, null, distribute_functions));
 	
 	return question;
 }
