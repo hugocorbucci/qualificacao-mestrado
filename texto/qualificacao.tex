@@ -60,91 +60,87 @@
 % ---------------------------------------------------------------------------- %
 % Corpo do texto
 \begin{document}
-\frontmatter \onehalfspacing  % espaçamento
+\frontmatter \onehalfspacing % espaçamento
 
 % ---------------------------------------------------------------------------- %
 % Capa
 \thispagestyle{empty}
 \begin{center}
-    \vspace*{2.3cm}
-    \textbf{\Large{Métodos ágeis e software livre:\\
-        Dois mundos que deveriam ter uma interação mais intensa}}\\
+  \vspace*{2.3cm}
+  \textbf{\Large{Métodos ágeis e software livre:\\
+      Propostas de como aumentar a interação\\
+      entre estas duas comunidades}}\\
 	
-    \vspace*{1.2cm}
-    \Large{Hugo Corbucci}
+  \vspace*{1.2cm} \Large{Hugo Corbucci}
     
-    \vskip 2cm
-	\textsc{
-	Qualificação apresentada\\[-0.25cm] 
-	ao\\[-0.25cm]
-	Instituto de Matemática e Estatística\\[-0.25cm]
-	da\\[-0.25cm]
-	Universidade de São Paulo}
+  \vskip 2cm \textsc{
+    Qualificação apresentada\\[-0.25cm]
+    ao\\[-0.25cm]
+    Instituto de Matemática e Estatística\\[-0.25cm]
+    da\\[-0.25cm]
+    Universidade de São Paulo}
     
-    \vskip 1.5cm
-    Programa: Mestrado em Ciências da Computação\\
-    Orientador: Prof. Dr. Alfredo Goldman
+  \vskip 1.5cm
+  Programa: Mestrado em Ciências da Computação\\
+  Orientador: Prof. Dr. Alfredo Goldman
 
-    \vskip 1cm
-	\normalsize{Durante o desenvolvimento deste trabalho o autor recebeu auxílio
-	financeiro do projeto Qualipso}
+  \vskip 1cm \normalsize{Durante o desenvolvimento deste trabalho o
+    autor recebeu auxílio financeiro do projeto Qualipso}
 	
-    \vskip 0.5cm
-    \normalsize{São Paulo, junho de 2009}
+  \vskip 0.5cm \normalsize{São Paulo, junho de 2009}
 \end{center}
 
 % ---------------------------------------------------------------------------- %
-% Página de rosto (só para a versão final)
-%\newpage
-%\thispagestyle{empty}
+% Página de rosto (só para a versão final) \newpage
+% \thispagestyle{empty}
 %	\begin{center}
-%    	\vspace*{2.3 cm}
-%    	\textbf{\Large{Título do trabalho a ser apresentado à \\
-%		CPG para a dissertação/tese}}\\
-%	    \vspace*{2 cm}
+%   \vspace*{2.3 cm}
+%   \textbf{\Large{Título do trabalho a ser apresentado à \\
+%       CPG para a dissertação/tese}}\\
+%   \vspace*{2 cm}
 %	\end{center}
 %
 %	\vskip 2cm
 %
 %	\begin{flushright}
-%	Este exemplar corresponde à redação\\
-%	final da dissertação devidamente corrigida\\
-%	e defendida por Hugo Corbucci\\
-%	e aprovada pela Comissão Julgadora.
-%	\vskip 2cm
+%   Este exemplar corresponde à redação\\
+%   final da dissertação devidamente corrigida\\
+%   e defendida por Hugo Corbucci\\
+%   e aprovada pela Comissão Julgadora.  \vskip 2cm
 %
 %	\end{flushright}
 %	\vskip 4.2cm
 %
 %	\begin{quote}
-%	\noindent Banca Examinadora:
+%   \noindent Banca Examinadora:
 %	
-%	\begin{itemize}
-%		\item Prof. Dr. Alfredo Goldman (orientador) - IME-USP.
-%		\item Prof. Dr. Fabio Kon - IME-USP.
-%		\item Prof. Dr. Nome Completo - IMPA.
-%	\end{itemize}
+%   \begin{itemize}
+%   \item Prof. Dr. Alfredo Goldman (orientador) - IME-USP.
+%   \item Prof. Dr. Fabio Kon - IME-USP.
+%   \item Prof. Dr. Nome Completo - IMPA.
+%   \end{itemize}
 %	  
 %	\end{quote}
-%\pagebreak
+% \pagebreak
 
-\pagenumbering{roman} 	% começamos a numerar 
+\pagenumbering{roman} % começamos a numerar
 
 % ---------------------------------------------------------------------------- %
 % Agradecimentos
-%\chapter*{Agradecimentos}
+% \chapter*{Agradecimentos}
 
-%Este trabalho contou com o apoio do projeto Qualipso \cite{Qualipso}.
+% Este trabalho contou com o apoio do projeto Qualipso
+% \cite{Qualipso}.
 
-%Gostaria de agradecer ao Christian Reis por sua ajuda, pelas
-%discussões interessantes e pelo apoio.
+% Gostaria de agradecer ao Christian Reis por sua ajuda, pelas
+% discussões interessantes e pelo apoio.
 
 % ---------------------------------------------------------------------------- %
 % Resumo
 \chapter*{Resumo}
 
-Métodos ágeis e comunidades de software livre compartilham culturas
-similares mas com diferentes abordagens para superar
+Usuários de métodos ágeis e comunidades de software livre compartilham
+culturas similares mas com diferentes abordagens para superar
 dificuldades. Apesar dos diversos profissionais envolvidos em ambos
 mundos, os métodos ágeis não são tão fortes quanto poderiam na
 comunidade de software livre nem o contrário. Esse trabalho identifica
@@ -181,40 +177,42 @@ processes.
 
 \chapter{Lista de Abreviaturas}
 \begin{tabular}{ll}
- 		SL       & Software Livre.\\
- 		OSS         & Software de Código Aberto (\emph{Open Source Software}).\\
- 		XP       & Programação Extrema (\emph{Extreme Programming}).\\
- 		FLOSS       & Software Gratuito, Livre e de Código Aberto (\emph{Free, Libre and Open Source
- Software}).\\
- 		BDD       & Desenvolvimento Dirigido por Comportamento (\emph{Behaviour Driven Development}).\\
- 		IRC       & Papo Retransmitido pela Internet (\emph{Internet Relay Chat}).\\
- 		FISL       & Fórum Internacional de Software Livre\\
- 		API       & Interface de Programação da Aplicação (\emph{Application Programming Interface}).\\ 
-                OMM       & Modelo de Maturidade para Software Livre (\emph{Open Source Maturity Model}).\\
+  SL       & Software Livre.\\
+  OSS         & Software de Código Aberto (\emph{Open Source Software}).\\
+  XP       & Programação Extrema (\emph{Extreme Programming}).\\
+  FLOSS       & Software Gratuito, Livre e de Código Aberto (\emph{Free, Libre and Open Source
+    Software}).\\
+  BDD       & Desenvolvimento Dirigido por Comportamento (\emph{Behaviour Driven Development}).\\
+  IRC       & Papo Retransmitido pela Internet (\emph{Internet Relay Chat}).\\
+  FISL       & Fórum Internacional de Software Livre\\
+  API       & Interface de Programação da Aplicação (\emph{Application Programming Interface}).\\ 
+  OMM       & Modelo de Maturidade para Software Livre (\emph{Open Source Maturity Model}).\\
 \end{tabular}
 
-%\chapter{Lista de Símbolos}
-%\begin{tabular}{ll}
+% \chapter{Lista de Símbolos}
+% \begin{tabular}{ll}
 %		$\omega$    & Freqüência angular.\\
 %\end{tabular}
 
-%\listoffigures               % lista de Figuras
-%\listoftables                % lista de Tabelas
+%\listoffigures % lista de Figuras
+%\listoftables % lista de Tabelas
 
 % ---------------------------------------------------------------------------- %
 % Capítulos
 \mainmatter
 
-%\singlespacing              % espaçamento simples
-\onehalfspacing              % espaçamento um e meio
-%\doublespacing              % espaçamento duplo
+% \singlespacing % espaçamento simples
+\onehalfspacing % espaçamento um e meio
+% \doublespacing % espaçamento duplo
 
-\input cap-introducao        % associado ao arquivo: 'cap-introducao.tex'
-\input cap-definicoes        % associado ao arquivo: 'cap-definicoes.tex'
-\input cap-open-to-agile     % associado ao arquivo: 'cap-open-to-agile.tex'
-\input cap-agile-to-open     % associado ao arquivo: 'cap-agile-to-open.tex'
-\input cap-perspectivas     % associado ao arquivo: 'cap-perspectivas.tex'
-\input cap-conclusoes        % associado ao arquivo: 'cap-conclusoes.tex'
+\input cap-introducao % associado ao arquivo: 'cap-introducao.tex'
+\input cap-definicoes % associado ao arquivo: 'cap-definicoes.tex'
+\input
+cap-open-to-agile % associado ao arquivo: 'cap-open-to-agile.tex'
+\input
+cap-agile-to-open % associado ao arquivo: 'cap-agile-to-open.tex'
+\input cap-perspectivas % associado ao arquivo: 'cap-perspectivas.tex'
+\input cap-conclusoes % associado ao arquivo: 'cap-conclusoes.tex'
 \appendix
 \input ape-pesquisaEA      % associado ao arquivo: 'ape-pesquisaEA.tex'
 \input ape-pesquisaOS      % associado ao arquivo: 'ape-pesquisaOS.tex'
