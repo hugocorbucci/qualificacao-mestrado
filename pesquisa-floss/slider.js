@@ -9,9 +9,10 @@
 // Global vars. You don't need to make changes here to change your sliders.
 // Changing the attributes in your (X)HTML file is enough.
 var carpemouseover                = false;
-var carpeDefaultSliderLength      = 500;
+var carpeDefaultSliderLength      = 300;
 var carpeSliderDefaultOrientation = 'horizontal';
 var carpeSliderClassName          = 'carpe_slider';
+var carpeSliderSlitClassName      = 'carpe_slider_slit';
 var carpeSliderDisplayClassName   = 'carpe_slider_display';
 var carpesliders                  = [];
 var carpedisplays                 = [];
@@ -31,7 +32,7 @@ function carpeAddLoadEvent(func)
 				func();
 			};
 		}
-}
+};
 // carpeGetElementsByClass: Cross-browser function that returns
 // an array with all elements that have a class attribute that
 // contains className
@@ -48,7 +49,7 @@ function carpeGetElementsByClass(className)
 		}
 	}
 	return classElements;
-}
+};
 // carpeLeft: Cross-browser version of "element.style.left"
 // Returns or sets the horizontal position of an element.
 function carpeLeft(elmnt, pos)
@@ -66,7 +67,7 @@ function carpeLeft(elmnt, pos)
 		else pos = elmnt.style.pixelLeft;
 	}
 	return pos;
-}
+};
 // carpeTop: Cross-browser version of "element.style.top"
 // Returns or sets the vertical position of an element.
 function carpeTop(elmnt, pos)
@@ -84,14 +85,14 @@ function carpeTop(elmnt, pos)
 		else pos = elmnt.style.pixelTop;
 	}
 	return pos;
-}
+};
 // moveSlider: Handles slider and display while dragging
 function moveSlider(evnt)
 {
 	var evnt = (!evnt) ? window.event : evnt; // The mousemove event
 	if (carpemouseover) { // Only if slider is dragged
 		carpeslider.x = carpeslider.startOffsetX + evnt.screenX; // Horizontal mouse position relative to allowed slider positions
-		carpeslider.y = carpeslider.startOffsetY + evnt.screenY; // Horizontal mouse position relative to allowed slider positions
+		carpeslider.y = carpeslider.startOffsetY + evnt.screenY; // Vertical mouse position relative to allowed slider positions
 		if (carpeslider.x > carpeslider.xMax) carpeslider.x = carpeslider.xMax; // Limit horizontal movement
 		if (carpeslider.x < 0) carpeslider.x = 0; // Limit horizontal movement
 		if (carpeslider.y > carpeslider.yMax) carpeslider.y = carpeslider.yMax; // Limit vertical movement
@@ -106,8 +107,8 @@ function moveSlider(evnt)
 		carpedisplay.value = v; // put the new value in the slider display element
 		return false;
 	}
-	return
-}
+	return;
+};
 // slide: Handles the start of a slider move.
 function slide(evnt)
 {
@@ -123,18 +124,18 @@ function slide(evnt)
 	carpedisplay.sliderId = carpeslider.id; // Associate the display with the correct slider.
 	var dec = parseInt(carpedisplay.getAttribute('decimals')); // Number of decimals to be displayed.
 	carpedisplay.decimals = dec ? dec : 0; // Default number of decimals: 0.
-	var val = parseInt(carpedisplay.getAttribute('valuecount'))  // Allowed number of values in the interval.
-	carpedisplay.valuecount = val ? val : carpeslider.distance + 1 // Default number of values: the sliding distance.
-	var from = parseFloat(carpedisplay.getAttribute('from')) // Min/start value for the display.
-	from = from ? from : 0 // Default min/start value: 0.
-	var to = parseFloat(carpedisplay.getAttribute('to')) // Max value for the display.
-	to = to ? to : carpeslider.distance // Default number of values: the sliding distance.
-	carpeslider.scale = (to - from) / carpeslider.distance // Slider-display scale [value-change per pixel of movement].
+	var val = parseInt(carpedisplay.getAttribute('valuecount'));  // Allowed number of values in the interval.
+	carpedisplay.valuecount = val ? val : carpeslider.distance + 1; // Default number of values: the sliding distance.
+	var from = parseFloat(carpedisplay.getAttribute('from')); // Min/start value for the display.
+	from = from ? from : 0; // Default min/start value: 0.
+	var to = parseFloat(carpedisplay.getAttribute('to')); // Max value for the display.
+	to = to ? to : carpeslider.distance; // Default number of values: the sliding distance.
+	carpeslider.scale = (to - from) / carpeslider.distance; // Slider-display scale [value-change per pixel of movement].
 	if (orientation == 'vertical') { // Set limits and scale for vertical sliders.
-		carpeslider.from = to // Invert for vertical sliders. "Higher is more."
-		carpeslider.xMax = 0
-		carpeslider.yMax = carpeslider.distance
-		carpeslider.scale = -carpeslider.scale // Invert scale for vertical sliders. "Higher is more."
+		carpeslider.from = to; // Invert for vertical sliders. "Higher is more."
+		carpeslider.xMax = 0;
+		carpeslider.yMax = carpeslider.distance;
+		carpeslider.scale = -carpeslider.scale; // Invert scale for vertical sliders. "Higher is more."
 	}
 	else { // Set limits for horizontal sliders.
 		carpeslider.from = from;
@@ -147,7 +148,7 @@ function slide(evnt)
 	document.onmousemove = moveSlider; // Start the action if the mouse is dragged.
 	document.onmouseup = sliderMouseUp; // Stop sliding.
 	return false;
-}
+};
 // sliderMouseUp: Handles the mouseup event after moving a slider.
 // Snaps the slider position to allowed/displayed value. 
 function sliderMouseUp()
@@ -176,7 +177,80 @@ function sliderMouseUp()
 		}
 	}
 	carpemouseover = false; // Stop the sliding.
-}
+};
+function slitMouseUp(evnt)
+{
+	if (!carpemouseover) {
+		if (!evnt) evnt = window.event; // Get the mouse event causing the slider activation.
+		var carpesliderslit = (evnt.target) ? evnt.target : evnt.srcElement; // Get the activated slider element.
+		carpeslider = carpesliderslit.nextSibling;
+		var slider = carpeslider;
+		var dist = parseInt(carpeslider.getAttribute('distance')); // The allowed slider movement in pixels.
+		carpeslider.distance = dist ? dist : carpeDefaultSliderLength; // Deafault distance from global var.
+		var ori = carpeslider.getAttribute('orientation'); // Slider orientation: 'horizontal' or 'vertical'.
+		var orientation = ((ori == 'horizontal') || (ori == 'vertical')) ? ori : carpeSliderDefaultOrientation;
+			// Default orientation from global variable.
+		var displayId = carpeslider['display']; // ID of associated display element.
+		carpedisplay = document.getElementById(displayId); // Get the associated display element.
+		var display = carpedisplay;
+		carpedisplay.sliderId = carpeslider.id; // Associate the display with the correct slider.
+		var dec = parseInt(carpedisplay.getAttribute('decimals')); // Number of decimals to be displayed.
+		carpedisplay.decimals = dec ? dec : 0; // Default number of decimals: 0.
+		var val = parseInt(carpedisplay.getAttribute('valuecount'));  // Allowed number of values in the interval.
+		carpedisplay.valuecount = val ? val : carpeslider.distance + 1; // Default number of values: the sliding distance.
+		var from = parseFloat(carpedisplay.getAttribute('from')); // Min/start value for the display.
+		from = from ? from : 0; // Default min/start value: 0.
+		var to = parseFloat(carpedisplay.getAttribute('to')); // Max value for the display.
+		to = to ? to : carpeslider.distance; // Default number of values: the sliding distance.
+		carpeslider.scale = (to - from) / carpeslider.distance; // Slider-display scale [value-change per pixel of movement].
+		var value = carpedisplay.value ? parseInt(carpedisplay.value) : 0;
+		var slitBounds = carpesliderslit.getBoundingClientRect();
+		var currentValue = value/carpeslider.scale;
+		if (orientation == 'vertical') { // Set limits and scale for vertical sliders.
+			carpeslider.from = to; // Invert for vertical sliders. "Higher is more."
+			carpeslider.xMax = 0;
+			carpeslider.yMax = carpeslider.distance;
+			carpeslider.scale = -carpeslider.scale; // Invert scale for vertical sliders. "Higher is more."
+			currentX = slitBounds.left;
+			currentY = slitBounds.top + currentValue;
+		}
+		else { // Set limits for horizontal sliders.
+			carpeslider.from = from;
+			carpeslider.xMax = carpeslider.distance;
+			carpeslider.yMax = 0;
+			currentX = slitBounds.left + currentValue;
+			currentY = slitBounds.top;
+		}
+		var deltaX = evnt.clientX - currentX;
+		var deltaY = evnt.clientY - currentY;
+		carpeslider.x = currentValue + deltaX;
+		carpeslider.y = currentValue + deltaY;
+		if (carpeslider.x > carpeslider.xMax) carpeslider.x = carpeslider.xMax; // Limit horizontal movement
+		if (carpeslider.x < 0) carpeslider.x = 0; // Limit horizontal movement
+		if (carpeslider.y > carpeslider.yMax) carpeslider.y = carpeslider.yMax; // Limit vertical movement
+		if (carpeslider.y < 0) carpeslider.y = 0; // Limit vertical movement
+		carpeLeft(carpeslider.id, carpeslider.x);  // move slider to new horizontal position
+		carpeTop(carpeslider.id, carpeslider.y); // move slider to new vertical position
+		var sliderVal = carpeslider.x + carpeslider.y; // pixel value of slider regardless of orientation
+		var sliderPos = (carpeslider.distance / carpedisplay.valuecount) * 
+			Math.round(carpedisplay.valuecount * sliderVal / carpeslider.distance);
+		var v = Math.round((sliderPos * carpeslider.scale + carpeslider.from) * // calculate display value
+			Math.pow(10, carpedisplay.decimals)) / Math.pow(10, carpedisplay.decimals);
+		carpedisplay.value = v; // put the new value in the slider display element
+		var v = (carpedisplay.value) ? carpedisplay.value : 0 // Find last display value.
+		var pos = (v - carpeslider.from)/(carpeslider.scale) // Calculate slider position (regardless of orientation).
+		if (carpeslider.yMax == 0) {
+			pos = (pos > carpeslider.xMax) ? carpeslider.xMax : pos;
+			pos = (pos < 0) ? 0 : pos;
+			carpeLeft(carpeslider.id, pos); // Snap horizontal slider to corresponding display position.
+		}
+		if (carpeslider.xMax == 0) {
+			pos = (pos > carpeslider.yMax) ? carpeslider.yMax : pos;
+			pos = (pos < 0) ? 0 : pos;
+			carpeTop(carpeslider.id, pos); // Snap vertical slider to corresponding display position.
+		}
+	}
+};
 function focusDisplay(evnt)
 {
 	if (!evnt) evnt = window.event; // Get the mouse event causing the display activation.
@@ -186,17 +260,21 @@ function focusDisplay(evnt)
 		carpedisplay.blur();
 	}
 	return;
-}
+};
 function carpeInit() // Set up the sliders and the displays.
 {
 	carpesliders = carpeGetElementsByClass(carpeSliderClassName) // Find the horizontal sliders.
 	for (var i = 0; i < carpesliders.length; i++) {
 		carpesliders[i].onmousedown = slide; // Attach event listener.
 	}
+	carpeslidersslit = carpeGetElementsByClass(carpeSliderSlitClassName) // Find the horizontal sliders.
+	for (var i = 0; i < carpeslidersslit.length; i++) {
+		carpeslidersslit[i].onmouseup = slitMouseUp; // Attach event listener.
+	}
 	carpedisplays = carpeGetElementsByClass(carpeSliderDisplayClassName) // Find the displays.
 	for (var i = 0; i < carpedisplays.length; i++) {
 		carpedisplays[i].value = carpedisplays[i].defaultValue; // Resets display on page reload.
 		carpedisplays[i].onfocus = focusDisplay; // Attach event listener.
 	}
-}
+};
 carpeAddLoadEvent(carpeInit);

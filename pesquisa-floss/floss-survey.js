@@ -342,7 +342,7 @@ function create_q16() {
 }
 function create_q17() {
 	var question = document.createElement('li');
-	var label = create_label('q17','What is the name of the main FLOSS project you contribute with?');
+	var label = create_label('q17','What is the name of the FLOSS project you mostly contribute (or contributed) with?');
 	var input = create_text('q17', 'q17_42Mainprojectname', 100);
 	input.onblur = validate_filled(input);
 	
@@ -370,7 +370,7 @@ function create_q18() {
 }
 function create_q19() {
 	var question = document.createElement('li');
-	var label = create_label('q19','What is your main role in that project?<br/>');
+	var label = create_label('q19','What is (or was) your main role in that project?<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -381,7 +381,7 @@ function create_q19() {
 }
 function create_q21() {
 	var question = document.createElement('li');
-	var label = create_label('q21','Do you receive any income from your FLOSS contributions?');
+	var label = create_label('q21','Do (Did) you receive any income from your FLOSS contributions?');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -412,7 +412,7 @@ function create_q22() {
 	list.className="no_numbers";
 	list.id='q22_list';
 	var question = document.createElement('li');
-	var label = create_label('q22','Is this your main income?');
+	var label = create_label('q22','Is (Was) this your main income?');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -448,7 +448,7 @@ function create_q23() {
 }
 function create_q24() {
 	var question = document.createElement('li');
-	var label = create_label('q24','How many people work with you on your main FLOSS project?<br/>');
+	var label = create_label('q24','How many people work (or worked) with you on your main FLOSS project?<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -496,7 +496,7 @@ function get_communication_channels() {
 function create_q30() {
 	var question = document.createElement('li');
 	question.id='list_q30';
-	var label = create_label('q30','What is your main communication channel with your team of that FLOSS project?<br/>');
+	var label = create_label('q30','What is (or was) your main communication channel with your team of that FLOSS project?<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -518,7 +518,7 @@ function create_q28() {
 }
 function create_q34() {
 	var question = document.createElement('li');
-	var label = create_label('q34','What is your main communication channel with the users of that FLOSS project?<br/>');
+	var label = create_label('q34','What is (or was) your main communication channel with the users of that FLOSS project?<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -539,7 +539,7 @@ function create_q29() {
 }
 function create_q36() {
 	var question = document.createElement('li');
-	var label = create_label('q36','How much effort do you spend to keep the project\'s informations updated?<br/>');
+	var label = create_label('q36','How much effort do (or did) you spend to keep the project\'s informations updated?<br/>');
 	
 	question.appendChild(label);
 	var slider = create_slider('q36', 'q36_12Efforttokeepinfoup', 'Very little', 'Huge');
@@ -559,7 +559,7 @@ function get_tools() {
 }
 function create_q37() {
 	var question = document.createElement('li');
-	var label = create_label('q37','Which of the following tools do your project already uses?<br/>');
+	var label = create_label('q37','Which of the following tools do your project already uses (or used)?<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -580,6 +580,9 @@ function create_q38() {
 	for(var i = 0; i < tools.length; i++) {
 		var item = document.createElement('li');
 		item.appendChild(document.createTextNode(tools[i]));
+		item.className='draggable';
+		item.onmouseover=function(){this.className='draggable hoover'};
+		item.onmouseout=function(){this.className='draggable'};
 		var hidden = document.createElement('input');
 		hidden.type='hidden';
 		hidden.id='q'+(48+i);
