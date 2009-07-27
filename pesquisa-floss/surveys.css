@@ -32,6 +32,14 @@ body {
 .centered {
 	text-align:center;
 }
+a {
+	color: #00F;
+	text-decoration: none;
+}
+a:hover {
+	color: #00F;
+	text-decoration: underline;
+}
 input,select {
 	border: 1px solid #99F;
 	background-color: #CCF;
