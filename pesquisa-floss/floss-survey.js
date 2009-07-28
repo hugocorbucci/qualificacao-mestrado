@@ -559,7 +559,7 @@ function get_tools() {
 }
 function create_q37() {
 	var question = document.createElement('li');
-	var label = create_label('q37','Which of the following tools do your project already uses (or used)?<br/>');
+	var label = create_label('q37','Which of the following tools does (or did) your project already use?<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
