@@ -12,8 +12,27 @@ function makeSortable() {
 	for(var i = 0, n = arguments.length; i < n; i++) {
 		id = arguments[i];
 		var list = document.getElementById(id);
-		if(list != null)
+		if(list != null) {
 			dragsort.makeListSortable(list);
+			repositioned(list.firstChild);
+		}
+	}
+}
+function repositioned(element) {
+	var current = element;
+	while(current.previousSibling != null) {
+		current = current.previousSibling;
+	}
+	var position = 1;
+	while(current != null) {
+		if(position <= 3) {
+			current.style.listStyleType = "decimal";
+		}
+		else {
+			current.style.listStyleType = "none";
+		}
+		current = current.nextSibling;
+		position = position + 1;
 	}
 }
 function store_sorting() {
@@ -71,7 +90,7 @@ function validate_radio(span_id) {
 		else if(checked != null && checked.value == "Other" && text.value == "")
 			error(text, 'text', "This field is required.");
 		else  if(checked == null)
-			error(label,'radio',"At least one option must be chosen");
+			error(label,'radio',"Exactly one option must be chosen");
 			
 		return checked != null && (checked.value != "Other" || text.value != "");
 	}
@@ -325,9 +344,9 @@ function agilers_questions() {
 	span.appendChild(create_q16());
 	span.appendChild(create_q19());
 	span.appendChild(create_q24());
-	span.appendChild(create_q21());
 	span.appendChild(create_q34());
 	span.appendChild(create_q29());
+	span.appendChild(create_q21());
 	span.appendChild(create_q56());
 	span.appendChild(create_q48());
 	span.appendChild(create_q64());
@@ -371,6 +390,27 @@ function create_q24() {
 	
 	return question;
 }
+function create_q34() {
+	var question = document.createElement('li');
+	var label = create_label('q34','What is (or was) your main communication channel with the clients of that project?<br/>');
+	
+	question.appendChild(label);
+	question.appendChild(document.createTextNode(' '));
+	var choices = get_communication_channels();
+	question.appendChild(create_radio_span(34, 'q34_7Maincommunicationch', choices, 'q35_71IfOtherwhatchannel'));
+	
+	return question;
+}
+function create_q29() {
+	var question = document.createElement('li');
+	var label = create_label('q29','How would you evaluate the quality of your communication with the clients?<br/>');
+	
+	question.appendChild(label);
+	var slider = create_slider('q29', 'q29_8Qualityofcommunicat', 'Extremely poor', 'Perfect');
+	question.appendChild(slider);
+	
+	return question;
+}
 function create_q21() {
 	var question = document.createElement('li');
 	var label = create_label('q21','Have you ever been on a distributed agile project?');
@@ -408,6 +448,7 @@ function get_communication_channels() {
 			'Internet Relay Chat (IRC)',
 			'Instant Message (Jabber, MSN, ICQ, etc.)',
 			'Email',
+			'Telephone',
 			'VoIP (Skype, Ekiga, iChat, etc.)',
 			'None',
 			'Other'];
@@ -435,27 +476,6 @@ function create_q28() {
 	
 	return question;
 }
-function create_q34() {
-	var question = document.createElement('li');
-	var label = create_label('q34','What is (or was) your main communication channel with the clients of that project?<br/>');
-	
-	question.appendChild(label);
-	question.appendChild(document.createTextNode(' '));
-	var choices = get_communication_channels();
-	question.appendChild(create_radio_span(34, 'q34_7Maincommunicationch', choices, 'q35_71IfOtherwhatchannel'));
-	
-	return question;
-}
-function create_q29() {
-	var question = document.createElement('li');
-	var label = create_label('q29','How would you evaluate the quality of your communication with the users?<br/>');
-	
-	question.appendChild(label);
-	var slider = create_slider('q29', 'q29_8Qualityofcommunicat', 'Extremely poor', 'Perfect');
-	question.appendChild(slider);
-	
-	return question;
-}
 function get_problems() {
 	return ['Discover what the users/clients need/want',
 	'Discover what is the next task to be done',
@@ -469,7 +489,7 @@ function get_problems() {
 }
 function create_q56() {
 	var question = document.createElement('li');
-	var label = create_label('q56','Sort the problems from the most critical one (first) to the less important (last) in the agile environments you worked on.<br/>Drag and drop the items to sort them.<br/>');
+	var label = create_label('q56','For some of the common problems encountered by agile teams listed below, sort the 3 most critical problems in the agile environments you worked on.<br/>Drag and drop the items to sort them. Items below number 3 will be ignored.<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -506,7 +526,7 @@ function get_tools() {
 }
 function create_q48() {
 	var question = document.createElement('li');
-	var label = create_label('q38','Sort the tools from the one would most help you (first) to the less useful (last).<br/>Drag and drop the items to sort them.<br/>');
+	var label = create_label('q38','Sort the 3 tools that would most help you in a distributed agile environment.<br/> Drag and drop the items to sort them. Items below number 3 will be ignored.<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -571,7 +591,7 @@ function create_q64() {
 function create_q65() {
 	var question = document.createElement('li');
 	question.id='list_q65';
-	var label = create_label('q65','How would you evaluate the quality of your communication with the users?<br/>');
+	var label = create_label('q65','How would you evaluate the agile level of your FLOSS project?<br/>');
 	
 	question.appendChild(label);
 	var slider = create_slider('q65', 'q65_111HowagilewasyourFL', 'Anti agile', 'Very agile');
@@ -582,7 +602,7 @@ function create_q65() {
 function create_q66() {
 	var question = document.createElement('li');
 	question.id='list_q66';
-	var label = create_label('q66','Sort the problems from the most critical one (first) to the less important (last) in the FLOSS projects you worked on.<br/>Drag and drop the items to sort them.<br/>');
+	var label = create_label('q66','For some of the common problems encountered by agile teams listed below, sort the 3 most critical problems in the FLOSS projects you worked on.<br/>Drag and drop the items to sort them. Items below number 3 will be ignored.<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));
@@ -610,7 +630,7 @@ function create_q66() {
 function create_q74() {
 	var question = document.createElement('li');
 	question.id='list_q74';
-	var label = create_label('q74','Sort the tools from the one would most help you in that FLOSS environment (first) to the less useful (last).<br/>Drag and drop the items to sort them.<br/>');
+	var label = create_label('q74','Sort the 3 tools that would most help you in that FLOSS environment.<br/>Drag and drop the items to sort them. Items below number 3 will be ignored.<br/>');
 	
 	question.appendChild(label);
 	question.appendChild(document.createTextNode(' '));

@@ -291,6 +291,9 @@ _ToolManCoordinate.prototype = {
   reposition : function(element) {
     element.style["top"] = this.y + "px";
     element.style["left"] = this.x + "px";
+	if(typeof repositioned == 'function') {
+		repositioned(element);
+	}
   }
 };
 
