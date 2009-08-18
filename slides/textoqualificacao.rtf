@@ -1,0 +1,986 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fmodern\fcharset0 Courier;\f2\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red191\green191\blue191;}
+{\info
+{\title Original file was qualificacao.tex}
+{\doccomm Created using latex2rtf 1.9.19 (released Nov 20 2007) on Tue Aug 11 14:06:25 2009}}\paperw12280\paperh15900\margl1445\margr1445\margb1445\margt1445\vieww33020\viewh20120\viewkind0
+\deftab720
+\pard\pardeftab720\sb1308\qc
+
+\f0\b\fs34 \cf0 m\'e9todos \'e1geis e software livre:\
+\pard\pardeftab720\qc
+\cf0 Propostas de como aumentar a intera\'e7\'e3o\
+\pard\pardeftab720\qj
+\cf0 entre estas duas comunidade
+\b0\fs24 \
+\pard\pardeftab720\sb682\qc
+
+\fs34 \cf0 Hugo Corbucci\
+\pard\pardeftab720\fi360\sb1138\qc
+\cf0 Qualifica\'e7\'e3o apresentada\
+\pard\pardeftab720\qc
+\cf0 ao\
+Instituto de Matem\'e1tica e Estat\'edstica\
+da\
+\pard\pardeftab720\sb682\qc
+\cf0 Universidade de S\'e3o Paulo\
+\pard\pardeftab720\fi360\sb853\qc
+\cf0 Programa: Mestrado em Ci\'eancias da Computa\'e7\'e3o\
+\pard\pardeftab720\qc
+\cf0 Orientador: Prof. Dr. Alfredo Goldman\
+\pard\pardeftab720\fi360\sb569\qc
+
+\fs24 \cf0 Durante o desenvolvimento deste trabalho o autor recebeu aux\'edlio financeiro do projeto Qualipso\
+\pard\pardeftab720\fi360\sb284\qc
+\cf0 S\'e3o Paulo, Julho de 2009 \
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0 \
+\pard\pardeftab720\sb240\qj
+\cf0 Resumo\
+\
+\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Usu\'e1rios de m\'e9todos \'e1geis e comunidade de software livre compartilham culturas similares mas com diferentes abordagens para superar dificuldades. Apesar dos diversos profissionais envolvidos em ambos mundos, os m\'e9todos \'e1geis n\'e3o s\'e3o t\'e3o fortes quanto poderiam na comunidade de software livre nem o contr\'e1rio. Esse trabalho identifica e exp\'f5e os obst\'e1culos que separam essas comunidade. Com ele, espera-se extrair as melhores solu\'e7\'f5es de cada comunidade e contribuir com sugest\'f5es de ferramenta e processos de desenvolvimento em ambos ambientes.\
+
+\b Palavras-chave:
+\b0  m\'e9todos \'e1geis, open source, software livre\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0 \
+\pard\pardeftab720\sb240\qj
+\cf0 Abstract\
+\
+\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Agile methods and open source software communities share similar cultures with different approaches to overcome problems. Although several professionals are involved in both worlds, neither agile methodologies are as strong as they could be in open source communities nor those communities provide strong contributions to agile methods. This work identifies and exposes the obstacles that separate those communities in order to extract the best of them and improve both sides with suggestions of tools and development processes.\
+
+\b Keywords:
+\b0  agile methods, open source\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0 Contents\
+\pard\pardeftab720\qj
+
+\b0\fs24 \cf0 \page \pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0  1\
+\pard\pardeftab720\sb240\qj
+\cf0 Lista de Abreviaturas\
+\
+\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 SL\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Software Livre.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 OSS\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Software de C\'f3digo Aberto (
+\i Open Source Software
+\i0 ).\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 XP\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Programa\'e7\'e3o Extrema (
+\i Extreme Programming
+\i0 ).\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 FLOSS\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Software Gratuito, Livre e de C\'f3digo Aberto (
+\i Free, Libre and Open Source Software
+\i0 ).\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 BDD\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Desenvolvimento Dirigido por Comportamento (
+\i Behaviour Driven Development
+\i0 ).\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 IRC\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Papo Retransmitido pela Internet (
+\i Internet Relay Chat
+\i0 ).\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 FISL\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 F\'f3rum Internacional de Software Livre\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 API\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Interface de Programa\'e7\'e3o da Aplica\'e7\'e3o (
+\i Application Programming Interface
+\i0 ).\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 OMM\cell 
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Modelo de Maturidade para Software Livre (
+\i Open Source Maturity Model
+\i0 ).\cell \lastrow\row
+\pard\pardeftab720\sb60\qj
+\cf0 \
+\page \pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0  2\
+\pard\pardeftab720\sb240\qj
+\cf0 Introdu\'e7\'e3o\
+\
+\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\fs32 \cf0 2.1  Considera\'e7\'f5es Preliminares\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 projeto de Software Livre (SL) t\'edpicos (que ser\'e3o definidos no Cap\'edtulo 2) normalmente recebem a colabora\'e7\'e3o de muitas pessoas geograficamente distantes [8] e se organizam ao redor de um ou mais l\'edderes que est\'e3o no topo da estrutura do grupo.\
+\pard\pardeftab720\fi360\qj
+\cf0 Num primeiro momento, este argumento poderia indicar que esse tipo de projeto n\'e3o \'e9 candidato para o uso de m\'e9todos \'e1geis de desenvolvimento de software j\'e1 que alguns valores essenciais parecem ausentes. Por exemplo, a dist\'e2ncia entre os desenvolvedores e a diversidade entre suas culturas dificulta enormemente a comunica\'e7\'e3o que \'e9 um dos principais valores de m\'e9todos \'e1geis. No entanto, a maioria dos projeto de software livre compartilham alguns princ\'edpios enunciados no manifesto \'e1geis [4]. Adapta\'e7\'e3o a mudan\'e7as, trabalhar com 
+\i feedback
+\i0  cont\'ednuo, entregar funcionalidades reais, respeitar colaboradores e usu\'e1rios e enfrentar desafios s\'e3o atitudes esperadas de desenvolvedores de m\'e9todos \'e1geis que s\'e3o naturalmente encontradas em comunidade de Software Gratuito, Livre e Aberto (FLOSS - 
+\i Free, Libre and Open Source Software
+\i0 ).\
+Durante um 
+\i workshop
+\i0  [12] sobre 
+\i \'93No Silver Bullets\'94
+\i0  [6] na confer\'eancia OOPSLA 2007, m\'e9todos \'e1geis e software livre foram mencionados como duas balas de prata fracassadas que trouxeram grandes benef\'edcios \'e0 comunidade de software apesar de n\'e3o terem resolvido de forma completa os problemas ligados ao desenvolvimento de software. Durante o mesmo 
+\i workshop
+\i0 , perguntou-se se o uso de v\'e1rias balas de prata fracassadas n\'e3o poderia fazer o papel de uma bala de prata real, isto \'e9, aumentar em uma ordem de magnitude os n\'edveis de produ\'e7\'e3o de software.\
+Em um encontro que reuniu aproximadamente 200 pessoas interessadas em m\'e9todos \'e1geis, foi realizada uma pesquisa para descobrir se a associa\'e7\'e3o entre m\'e9todos \'e1geis e software livre \'e9 comum. A pesquisa (dispon\'edvel no Ap\'eandice A) foi realizada em papel e entregue a todos os participantes do encontro no in\'edcio do evento e recolhida ao final do evento. Foram coletados 93 formul\'e1rios preenchidos que resultaram nas seguintes estat\'edsticas. Em 58% das respostas, os participantes se identificaram como desenvolvedores e outros 25% se disseram gerentes. 84% tinham menos de um ano de experi\'eancia com m\'e9todos \'e1geis e tinham menos de 35 anos de idade. Estes resultados caracterizam uma popula\'e7\'e3o de jovens profissionais com interesse em m\'e9todos \'e1geis mas com conhecimento superficial sobre o assunto. Do ponto de vista do software livre, 68% das respostas diziam nunca ter contribu\'eddo com software livre e 25% afirmavam colaborarem ocasionalmente com algum projeto.\
+A partir desses resultados, conhecimento em m\'e9todos \'e1geis e contribui\'e7\'f5es com software livre obtiveram uma correla\'e7\'e3o de 0,15 sendo que quanto mais novo, maior a probabilidade de que o indiv\'edduo tenha conhecimento em m\'e9todos \'e1geis (correla\'e7\'e3o de 0,25) e de que contribua com software livre (correla\'e7\'e3o de 0,15). Essas correla\'e7\'f5es s\'e3o relativamente baixas mas nos d\'e3o uma ideia de que as comunidade n\'e3o est\'e3o muito relacionadas. Por isso, \'e9 interessante pensar na uni\'e3o das solu\'e7\'f5es aplicadas em cada uma das duas comunidade como uma forma de diminuir os problemas de desenvolvimento de software que \'e9 o objetivo desse trabalho.\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs32 \cf0 2.2  Contribui\'e7\'f5es\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 As principais contribui\'e7\'f5es deste trabalho est\'e3o discriminadas abaixo:\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 \'95	Um estudo detalhado sobre as semelhan\'e7as e diferen\'e7as entre m\'e9todos \'e1geis e software livre; \
+\'95	Uma pesquisa relacionando m\'e9todos \'e1geis e software livre (pronta); \
+\'95	Uma pesquisa com a comunidade de software livre sobre sua rela\'e7\'e3o com m\'e9todos \'e1geis (a ser realizada); \
+\'95	Uma pesquisa com a comunidade de m\'e9todos \'e1geis sobre sua rela\'e7\'e3o com software livre (a ser realizada). \
+\pard\pardeftab720\sb60\qj
+\cf0 Para o texto final, o trabalho tamb\'e9m pretende incluir propostas de pr\'e1ticas, ou ferramenta, que, baseadas nas experi\'eancias de uma comunidade, possam ajudar a outra.\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs32 \cf0 2.3  Organiza\'e7\'e3o do Trabalho\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Os t\'f3picos apresentados nesse trabalho consideram apenas um subconjunto de projeto que s\'e3o ditos \'e1geis ou software livre. O Cap\'edtulo 2 apresenta as defini\'e7\'f5es usadas nesse trabalho. O Cap\'edtulo 3 apresenta alguns aspectos da maioria das comunidade de software livre que poderiam ser melhorados com pr\'e1ticas ou princ\'edpios \'e1geis. O cap\'edtulo seguinte (Cap\'edtulo 4) aborda alguns problemas que surgem na utiliza\'e7\'e3o de m\'e9todos \'e1geis com equipes grandes e distribu\'eddas que j\'e1 foram tratados nas comunidade de software livre. Com essas considera\'e7\'f5es, o Cap\'edtulo 5 apresenta os pr\'f3ximos passos e as metas estabelecidas. Por fim, o Cap\'edtulo 6 resume o trabalho realizado e apresenta os planos para o futuro. \
+\page \pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0  3\
+\pard\pardeftab720\sb240\qj
+\cf0 Defini\'e7\'f5es\
+\
+\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Para poder falar sobre software livre e m\'e9todos \'e1geis, \'e9 necess\'e1rio, primeiro, definir o que deve ser entendido por estas palavras. m\'e9todos \'e1geis s\'e3o definidos na Se\'e7\'e3o 2.1 enquanto a defini\'e7\'e3o de software livre, mais controversa, \'e9 dada na Se\'e7\'e3o 2.2.\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs32 \cf0 3.1  Defini\'e7\'e3o de m\'e9todos \'c1geis\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Este trabalho considerar\'e1 que qualquer m\'e9todos de engenharia de software que siga os princ\'edpios do manifesto \'e1geis [4] \'e9 um m\'e9todos \'e1geis. O interesse principal do trabalho est\'e1 ligado aos m\'e9todos mais conhecidos, como Programa\'e7\'e3o Extrema (XP) [3], Scrum [25] e a fam\'edlia Crystal [7]. Mas tamb\'e9m ser\'e3o mencionadas algumas ideias relacionadas \'e0 \'93filosofia\'94 
+\i Lean
+\i0  [18] e sua aplica\'e7\'e3o ao desenvolvimento de software [20].\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs32 \cf0 3.2  Defini\'e7\'e3o de Software Livre\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Os termos \'93Software de C\'f3digo Aberto\'94 e \'93Software Livre\'94 ser\'e3o considerados os mesmos neste trabalho apesar de terem diferen\'e7as importantes em seus contextos espec\'edficos [9, Ch. 1, Free Versus Open source]. projeto ser\'e3o considerados de c\'f3digo aberto (ou livres) se seu c\'f3digo fonte estiver dispon\'edvel e puder ser modificado por qualquer pessoa com o conhecimento t\'e9cnico necess\'e1rio sem consentimento pr\'e9vio do autor original e sem encargos. Note que esta defini\'e7\'e3o est\'e1 mais pr\'f3xima da ideia de software livre do que da de c\'f3digo aberto.\
+\pard\pardeftab720\fi360\qj
+\cf0 Outra restri\'e7\'e3o ser\'e1 de que projeto iniciados e controlados por uma empresa n\'e3o ser\'e3o considerados livres. Isto porque projeto controlados por empresas onde seja disponibilizado o c\'f3digo fonte e/ou sejam aceitas colabora\'e7\'f5es externas podem ser desenvolvidos com qualquer m\'e9todos de engenharia de software. Basta que a empresa obrigue seus funcion\'e1rios a seguir determinado m\'e9todos. Alguns incluem pr\'e1ticas que atraem contribui\'e7\'f5es externas outros distribuem apenas o trabalho escolhido aos membros da equipe. De qualquer forma, a empresa controla sua pr\'f3pria equipe e mant\'e9m o controle sobre o desenvolvimento independentemente de colabora\'e7\'f5es.\
+No entanto, projeto livres baseados em comunidade de empresas podem ser caracterizados como projeto de software livre se n\'e3o existir um contrato que force cada empresa a dedicar uma determinada quantidade de horas de trabalho para o projeto. Caem neste caso o Eclipse com a 
+\i Eclipse Foundation
+\i0  que, apesar de ter sido iniciado e pela IBM, agrega diversas empresas parceiras e o Java com o 
+\i Java Community Process
+\i0  que permite que a comunidade tome decis\'f5es sobre o desenvolvimento da linguagem apesar da Sun ser propriet\'e1ria da marca. Esses contextos se assemelham ao de um desenvolvedor ou uma equipe central trabalhando em conjunto com indiv\'edduos ou equipes de forma volunt\'e1ria e, por isso, podem ser considerados software livre conforme o contexto deste texto.\
+Considerando esta defini\'e7\'e3o, \'e9 importante caracterizar as pessoas envolvidas em tais projeto. Em 2002, o 
+\i FLOSS Project
+\i0  [17] publicou um relat\'f3rio sobre uma pesquisa realizada com contribuidores de projeto de software livre. Os dados coletados [16] mostram que 78.77% dos contribuidores t\'eam emprego (pergunta 42) e que apenas 50.82% da comunidade de software livre s\'e3o programadores enquanto 24.76% n\'e3o ganham a maioria de suas rendas com desenvolvimento de software (pergunta 10). Al\'e9m desses resultados, a pesquisa apresenta o fato de 78.78% dos colaboradores considerarem suas tarefas em projeto livres mais prazerosas (pergunta 22.2) do que suas atividades regulares. 42.30% tamb\'e9m consideram seus projeto de software livre mais organizados que seus projeto profissionais (pergunta 22.4). Como conclus\'e3o, poderia-se afirmar que contribuidores de software livre tendem a considerar suas atividades nos projeto s\'e3o mais prazerosas e eficientes. Esses sentimentos sobre essas atividades podem estar ligados \'e0 liberdade no sistema de desenvolvimento, no qual n\'e3o h\'e1 nenhum processo pesado.\
+Por pesado, entende-se um processo no qual \'e9 muito importante documentar rigorosamente as decis\'f5es tomadas e a maneira na qual atingiu-se essa decis\'e3o. Tipicamente, estes processos contam com uma importante fase de planejamento de forma a garantir que os documentos que explicam a tomada de decis\'e3o sejam \'fateis e apresentem an\'e1lises das v\'e1rias possibilidades. A palavra pesada \'e9 usada como oposi\'e7\'e3o aos processos ditos leves nos quais espera-se que o esfor\'e7o de documenta\'e7\'e3o seja investido no c\'f3digo. Outra pesquisa [22] apontou que 74% dos projeto de software livre tem equipes com at\'e9 5 pessoas e que 62% dos contribuidores trabalham entre si pela Internet e nunca se conheceram fisicamente. Portanto, \'e9 cr\'edtico para esses projeto que o processo de desenvolvimento esteja adequado a essas caracter\'edsticas e n\'e3o se torne um fardo para o trabalho volunt\'e1rio.\
+Tendo deixado claro o significado de m\'e9todos \'c1geis e Software Livre neste texto, o cap\'edtulo seguinte (Cap\'edtulo 3) aborda as semelhan\'e7as e diferen\'e7as entre o desenvolvimento de Software Livre e os conceitos de m\'e9todos \'c1geis. cap-open-to-agile cap-agile-to-open \
+\page \pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0  4\
+\pard\pardeftab720\sb240\qj
+\cf0 Pr\'f3ximos Passos\
+\
+\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 O trabalho apresentado d\'e1 ind\'edcios de que o estado atual das comunidade de software livre e de m\'e9todos \'e1geis pode ser melhorado pela uni\'e3o dos conhecimentos e solu\'e7\'f5es encontradas em cada um destes ambientes. Este projeto pretende dar alguns dos passos necess\'e1rios para essa uni\'e3o que est\'e3o listados na Se\'e7\'e3o 5.1 com as metas apresentadas na Se\'e7\'e3o 5.2. Por fim, a Se\'e7\'e3o 5.3 indica algumas das atividades que podem trazer benef\'edcios a essa uni\'e3o mas que n\'e3o ser\'e3o cobertas por este trabalho.\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs32 \cf0 4.1  Atividades a Serem Realizadas\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 As pesquisa dispon\'edveis nos ap\'eandices B e C est\'e3o dispon\'edveis 
+\i online
+\i0 . A primeira ser\'e1 divulgada nos principais portais de apoio a projeto livres assim como em blogs relacionados. A segunda  ser\'e1 divulgada em listas de email assim como na Agile 2009 que \'e9 um dos principais eventos relacionado \'e0 comunidade de m\'e9todos \'e1geis.\
+\pard\pardeftab720\fi360\qj
+\cf0 Os resultados das pesquisa ser\'e3o usados na identifica\'e7\'e3o dos principais problemas de comunica\'e7\'e3o encontrados por cada uma das comunidade na ado\'e7\'e3o das t\'e9cnicas da outra. Quando esses problemas forem identificados, espera-se criar um conjunto de pequenos aplicativos que ajudem a resolver os problemas encontrados. A ideia \'e9 de que esses aplicativos sejam pequenos programas em Javascript que permitam que o usu\'e1rio mantenha dados atualizados sobre seu projeto com consultas ao seu reposit\'f3rio de c\'f3digo.\
+Tendo em m\'e3os esses pequenos aplicativos e os problemas de comunica\'e7\'e3o que eles pretendem resolver, espera-se fazer uma an\'e1lise deles com rela\'e7\'e3o \'e0 sua adequa\'e7\'e3o com o Modelo de Maturidade para Software Livre (OMM - 
+\i Open Source Maturity Model
+\i0 ) que est\'e1 sendo desenvolvido pelo projeto QualiPSo. A an\'e1lise ser\'e1 baseada na taxonomia proposta nas recomenda\'e7\'f5es do projeto Qualipso [11] para aumentar a qualidade de projeto livres. A ideia \'e9 caracterizar as propostas de solu\'e7\'f5es oferecidas pelas ferramenta, de acordo com a taxonomia descrita, de forma a evidenciar os benef\'edcios que cada ferramenta pode trazer.\
+Com essa caracteriza\'e7\'e3o ser\'e1 mais f\'e1cil verificar quais pontos descritos pelo OMM s\'e3o abordados pelas ferramenta e quais ainda precisam ser tratados. Caso o trabalho aborde uma quantidade razo\'e1vel de pontos, ele poder\'e1 ser estendido para propor uma adapta\'e7\'e3o de algum processo \'e1geis com o uso das ferramenta desenvolvidas que se adeq\'fae ao primeiro n\'edvel do modelo de maturidade citado.\
+Por fim, os resultados das pesquisa ser\'e3o condensados em um relat\'f3rio que ser\'e1 anexado \'e0s ferramenta descritas anteriormente e ser\'e1 elaborada uma disserta\'e7\'e3o com a an\'e1lise desses resultados e com as conclus\'f5es obtidas do trabalho de pesquisa e de desenvolvimento e a an\'e1lise do modelo de maturidade do projeto QualiPSo.\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs32 \cf0 4.2  Metas para as Atividades\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Com rela\'e7\'e3o \'e0s pesquisa, a meta \'e9 de que os resultados da pesquisa direcionada \'e0 comunidade de software livre sejam coletados at\'e9 o in\'edcio de Outubro de 2009. A pesquisa ser\'e1 divulgada em portais de apoio a projeto de Software Livre como Sourceforge.net, Google Code, CodeHaus, Github e LaunchPad.net.\
+\pard\pardeftab720\fi360\qj
+\cf0 J\'e1 a pesquisa direcionada \'e0 comunidade de m\'e9todos \'e1geis ser\'e1 divulgada durante as duas semanas que antecedem a Agile 2009 no site do evento e em listas de email relacionadas. Mantendo o mesmo intervalo de tempo para coletar as respostas, os resultados seriam coletados por volta do in\'edcio de Outubro 2009.\
+A avalia\'e7\'e3o das pesquisa ser\'e1 realizada de forma independente num primeiro momento durante as duas semanas que seguem a coleta dos resultados. Em seguida, os dados das pesquisa ser\'e3o cruzados para tentar identificar as respostas provindas dos mesmos indiv\'edduos nas duas comunidade. Desta forma, espera-se concluir a avalia\'e7\'e3o dos resultados das pesquisa no in\'edcio de Novembro de 2009.\
+O desenvolvimento das ferramenta depende apenas parcialmente dos resultados obtidos na an\'e1lise conjunta das pesquisa e por isso pode ter in\'edcio antes dos resultados completos serem coletados. Desta forma, espera-se montar a infra-estrutura para desenvolvimento e elabora\'e7\'e3o das ferramenta enquanto a pesquisa ocorre. Espera-se dedicar apenas 3 meses de desenvolvimento ap\'f3s o t\'e9rmino de ambas pesquisa e da avalia\'e7\'e3o dos resultados. Com isso, a meta \'e9 finalizar o desenvolvimento das ferramenta at\'e9 o in\'edcio de Fevereiro 2010.\
+A disserta\'e7\'e3o decorrente do trabalho dever\'e1 evoluir conforme o trabalho avan\'e7a e, por isso, deveria acompanhar o desenvolvimento da ferramenta com um per\'edodo de um m\'eas para revis\'e3o e finaliza\'e7\'e3o do texto. Com isso, a disserta\'e7\'e3o deveria estar pronta em Mar\'e7o de 2010 como mostra a tabela 5.1.\
+\pard\pardeftab720\sb240\qj
+\cf0 \
+\pard\pardeftab720\qc
+\cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx785
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx1570
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2356
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3141
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3927
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4712
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5498
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx6283
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7069
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7854
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 7/9\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 8/9\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 9/9\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 10/9\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 11/9\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 12/9\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 1/10\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 2/10\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 3/10\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx785
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx1570
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2356
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3141
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3927
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4712
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5498
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx6283
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7069
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7854
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Pesquisa Software Livre\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx785
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx1570
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2356
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3141
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3927
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4712
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5498
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx6283
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7069
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7854
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Pesquisa m\'e9todos \'c1geis\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx785
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx1570
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2356
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3141
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3927
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4712
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5498
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx6283
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7069
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7854
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 An\'e1lise\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx785
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx1570
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2356
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3141
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3927
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4712
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5498
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx6283
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7069
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7854
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Desenvolvimento\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx785
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx1570
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2356
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3141
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx3927
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx4712
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5498
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx6283
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7069
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx7854
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ql\qnatural
+\cf0 Disserta\'e7\'e3o\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 X\cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell \lastrow\row
+\pard\pardeftab720\sb240\qj
+\cf0  \
+\pard\pardeftab720\qc
+\cf0 Table 4.1: Prazos esperados para as atividades\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs32 \cf0 4.3  Sugest\'f5es para pesquisa Futuras\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Este trabalho n\'e3o ir\'e1 se aprofundar na elabora\'e7\'e3o de um m\'e9todos de desenvolvimento que se adere aos princ\'edpios \'e1geis com foco na produ\'e7\'e3o de software livre mas este, com certeza, \'e9 um t\'f3pico interessante para futuras pesquisa. Imaginar uma forma de balancear o desenvolvimento e a resposta \'e0s mudan\'e7as descobertas com a manuten\'e7\'e3o da comunidade e atra\'e7\'e3o de colaboradores pode trazer grandes avan\'e7os \'e0 maneira com que os m\'e9todos \'e1geis lidam com seus clientes.\
+\pard\pardeftab720\fi360\qj
+\cf0 Outro trabalho interessante seria o de tentar analisar os impactos que a cultura associada a uma linguagem de programa\'e7\'e3o tem nos projeto elaborados nessa linguagem. A cultura de testes automatizados tem crescido muito nos \'faltimos tempos mas algumas comunidade como a de Ruby e Python t\'eam tido um destaque nesse quesito. Isso vem da forma como a linguagem \'e9 apresentada ou da comunidade que a cerca. Com isso, como uma determinada comunidade (digamos a de m\'e9todos \'e1geis) pode influenciar os projeto criados simplesmente criando boas ferramenta para suas pr\'e1ticas nas linguagens usadas. \
+\page \pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0  5\
+\pard\pardeftab720\sb240\qj
+\cf0 Conclus\'f5es\
+\
+\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\fs32 \cf0 5.1  Considera\'e7\'f5es Finais\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 Neste trabalho, foram mostradas diversas evid\'eancias de que um aumento de sinergia entre m\'e9todos \'e1geis e projeto de software livre pode beneficiar o processo de desenvolvimento de projeto livres e ajudar os atuais m\'e9todos \'e1geis a lidar com dificuldades conhecidas. Alguns projeto de software livre j\'e1 adotam algumas t\'e9cnicas \'e1geis para serem mais eficientes com rela\'e7\'e3o aos pedidos dos usu\'e1rios mas a descri\'e7\'e3o de um m\'e9todos \'e1geis que considere todos os fatores do Software Livre provavelmente aumentaria a ado\'e7\'e3o das pr\'e1ticas nessas comunidade. Por outro lado, resolver o problema \'e9 um desafio que poderia consolidar m\'e9todos \'e1geis em ambientes distribu\'eddos com o apoio de uma grande comunidade de usu\'e1rios.\
+\pard\pardeftab720\fi360\qj
+\cf0 Como parte desse trabalho, duas pesquisa est\'e3o planejadas. A primeira deve ser em sites de apoio a projeto livres para entender qual o grau de envolvimento com m\'e9todos \'e1geis atualmente existente na comunidade de software livre e quais as dificuldades encontradas por estas pessoas para adotarem mais pr\'e1ticas \'e1geis. A outra deve ser divulgada durante a Agile 2009 que ser\'e1 realizada no fim de Agosto. Esta pesquisa procura avaliar qual o envolvimento da comunidade de m\'e9todos \'e1geis em projeto de software livre. Ambas pesquisa ser\'e3o usadas para prover um maior entendimento das intera\'e7\'f5es entre ambas comunidade e como melhor\'e1-las.\
+\pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0  A\
+\pard\pardeftab720\sb240\qj
+\cf0 Pesquisa realizada no Encontro \'e1geis 2008\
+\
+\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 A pesquisa apresentada na Figura A.1 foi impressa em papel e distribu\'edda junto com o material do evento .\
+\pard\pardeftab720\fi360\sb240\qj
+\cf0  \
+\pard\pardeftab720\qc
+\cf0  \
+Figure 1.1: Conte\'fado da pesquisa do Encontro \'e1geis\
+\pard\pardeftab720\sb240\qj
+\cf0 As respostas foram coletadas ao final do evento quando os participantes deixavam os formul\'e1rios na mesa dispon\'edvel na sa\'edda. Os resultados coletados interessantes no nosso contexto foram os seguintes:\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 1.	O que voc\'ea considera ser sua atividade principal?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 \'95	Administrador de Banco de Dados: 1,08% (1) \
+\'95	Administrador de Rede: 3,23% (3) \
+\'95	Desenvolvedor: 58,06% (54) \
+\'95	Gerente: 26,88% (25) \
+\'95	Testador: 3,23% (3) \
+\'95	Analista: 3,23% (3) \
+\'95	Acad\'eamico: 2,15% (2) \
+\'95	Documentador: 1,08% (1) \
+\'95	Consultor: 1,08% (1) \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 2.	Qual sua experi\'eancia nessa atividade?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 \'95	Menos de 1 ano: 16,13% (15) \
+\'95	Entre 1 e 5 anos: 50,54% (47) \
+\'95	Entre 5 e 15 anos: 26,88% (25) \
+\'95	Mais de 15 anos: 6,45% (6) \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 3.	Qual sua experi\'eancia com m\'e9todos \'e1geis?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 \'95	Nenhuma: 40,86% (38) \
+\'95	Menos de 1 ano: 41,94% (39) \
+\'95	Entre 1 e 3 anos: 15,05% (14) \
+\'95	Mais de 3 anos: 2,15% (2) \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 4.	Voc\'ea colabora com projeto de software livre com frequ\'eancia?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 \'95	Nunca: 67,74% (63) \
+\'95	Ocasionalmente/2 vezes por semestre: 24,73% (23) \
+\'95	Frequentemente/1 vez por m\'eas: 2,15% (2) \
+\'95	Sempre/1 vez por semana ou mais: 5,38% (5) \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 5.	Qu\'e3o \'e1geis voc\'ea avalia seu principal projeto de software livre?  (Foram desconsideradas as respostas daqueles que responderam \'93Nunca\'94 na pergunta anterior) \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 \'95	Nada \'e1geis: 31,03% (9) \
+\'95	Pouco \'e1geis. N\'e3o fazemos muitos testes, temos planos r\'edgidos, etc...: 24,14% (7) \
+\'95	Razoavelmente \'e1geis. Temos alguns testes, lan\'e7amos vers\'f5es a cada 3 a 6 meses, etc...: 34,48% (10) \
+\'95	Muito \'e1geis. Tudo \'e9 feito com TDD, temos um servidor para build autom\'e1tico, etc...: 10,34% (3) \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 6.	Sexo \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 \'95	Masculino: 83,87% (78) \
+\'95	Feminino: 16,13% (15) \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 7.	Idade \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 \'95	Entre 15 e 25 anos: 30,11% (28) \
+\'95	Entre 25 e 35 anos: 52,69% (49) \
+\'95	Entre 45 e 45 anos: 13,98% (13) \
+\'95	Mais de 45 anos: 3,23% (3) \
+\pard\pardeftab720\sb240\qj
+\cf0 \page \pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0  B\
+\pard\pardeftab720\sb240\qj
+\cf0 Pesquisa para colaboradores de Software Livre\
+\
+\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 A pesquisa abaixo \'e9 uma vers\'e3o em Portugu\'eas para impress\'e3o da pesquisa disponibilizada em {\field{\*\fldinst{HYPERLINK "http://www.ime.usp.br/~corbucci/floss-survey.html"}}{\fldrslt 
+\f1 http://www.ime.usp.br/~corbucci/floss-survey.html}} do dia 25 de Julho de 2009 at\'e9 o dia 25 de Outubro de 2009.\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 1.	Pa\'eds de moradia: 
+\f1 _________________
+\f0 \
+2.	Ano de nascimento: 
+\f1 ______
+\f0 \
+3.	N\'famero de contribui\'e7\'f5es para projeto livres: 
+\f1 ____
+\f0 \
+4.	Ano da primeira contribui\'e7\'e3o para projeto livre: 
+\f1 ______
+\f0 \
+5.	Nome do principal projeto livre para o qual contribui (ou contribuiu): 
+\f1  ______________
+\f0 \
+6.	Ano da primeira contribui\'e7\'e3o para esse projeto: 
+\f1 ______
+\f0 \
+7.	Principal papel nesse projeto: \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Mantenedor \
+( )	Commiter \
+( )	Programador \
+( )	Testador \
+( )	Documentador \
+( )	Relator de bugs/Descritor de requisitos \
+( )	Usu\'e1rio \
+( )	Outro: 
+\f1 _________________
+\f0  \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 8.	Recebe (ou recebeu) algum rendimento por suas contribui\'e7\'f5es em projeto livres?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Sim \
+( )	N\'e3o \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 9.	Se sim, \'e9 (ou foi) sua principal fonte de rendimentos?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Sim \
+( )	N\'e3o \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 10.	Se n\'e3o, sua principal fonte de renda est\'e1 ligada com Tecnologia da Informa\'e7\'e3o?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Sim \
+( )	N\'e3o \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 11.	Quantas pessoas trabalham (ou trabalhavam) com voc\'ea no seu principal projeto livre?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	0 \
+( )	1 a 5 \
+( )	6 a 10 \
+( )	11 a 50 \
+( )	Mais de 50 \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 12.	Qual \'e9 (ou foi) o principal canal de comunica\'e7\'e3o entre essa equipe?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Cara a cara \
+( )	Site na Internet \
+( )	Lista de correio eletr\'f4nico \
+( )	Ferramenta de rastreamento de problemas \
+( )	IRC (Internet Relay Chat) \
+( )	Mensagens Instant\'e2neas \
+( )	Correios eletr\'f4nicos individuais \
+( )	Voz sobre IP (Skype, Ekiga, iChat, etc...) \
+( )	Nenhum \
+( )	Outro: 
+\f1 _____________
+\f0  \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 13.	Como voc\'ea avalia a qualidade de communica\'e7\'e3o da equipe? \
+\pard\pardeftab720\li600\qj
+\cf0 P\'e9ssima 
+\f1 ---------------------------------------
+\f0  \'d3tima\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 14.	Qual \'e9 (ou foi) o principal canal de comunica\'e7\'e3o entre a equipe e os usu\'e1rios?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Cara a cara \
+( )	Site na Internet \
+( )	Lista de correio eletr\'f4nico \
+( )	Ferramenta de rastreamento de problemas \
+( )	IRC (Internet Relay Chat) \
+( )	Mensagens Instant\'e2neas \
+( )	Correios eletr\'f4nicos individuais \
+( )	Voz sobre IP (Skype, Ekiga, iChat, etc...) \
+( )	Nenhum \
+( )	Outro: 
+\f1 _____________
+\f0  \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 15.	Como voc\'ea avalia a qualidade de communica\'e7\'e3o entre a equipe e os usu\'e1rios? \
+\pard\pardeftab720\li600\qj
+\cf0 P\'e9ssima 
+\f1 ---------------------------------------
+\f0  \'d3tima\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 16.	Quanto esfor\'e7o voc\'ea investe (ou investiu) para manter as informa\'e7\'f5es do projeto atualizadas? \
+\pard\pardeftab720\li600\qj
+\cf0 Nenhum 
+\f1 ---------------------------------------
+\f0  Enorme\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 17.	Quais das seguintes ferramenta seus projeto j\'e1 utiliza?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Mensagem ou Correio Eletr\'f4nico autom\'e1tico em caso de falha na montagem autom\'e1tica do projeto \
+( )	Estado din\'e2mico da vers\'e3o em desenvolvimento a partir da ferramenta de controle de problemas \
+( )	Gerenciamento da ferramenta de controle de problemas a partir dos logs de commit do reposit\'f3rio de c\'f3digo \
+( )	Lan\'e7amento de nova vers\'e3o a partir de um click no site do projeto \
+( )	Gera\'e7\'e3o e atualiza\'e7\'e3o autom\'e1tica de gr\'e1ficos de m\'e9tricas a partir do reposit\'f3rio de c\'f3digo \
+( )	Ordena\'e7\'e3o colaborativa da prioridade dos problemas a serem endere\'e7ados pela equipe de desenvolvimento \
+( )	Linha do tempo no site do projeto ligada ao reposit\'f3rio de forma a facilitar an\'e1lises em retrospectivas \
+( )	Um rob\'f4 nos canais de communica\'e7\'e3o da equipe facilitar a comunica\'e7\'e3o ass\'edncrona \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 18.	Ordene as seguintes ferramenta da que mais reduz (ou reduziria) o esfor\'e7o gasto em comunica\'e7\'e3o no seu projeto para a que menos reduz (ou reduziria). \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Mensagem ou Correio Eletr\'f4nico autom\'e1tico em caso de falha na montagem autom\'e1tica do projeto \
+( )	Estado din\'e2mico da vers\'e3o em desenvolvimento a partir da ferramenta de controle de problemas \
+( )	Gerenciamento da ferramenta de controle de problemas a partir dos logs de commit do reposit\'f3rio de c\'f3digo \
+( )	Lan\'e7amento de nova vers\'e3o a partir de um click no site do projeto \
+( )	Gera\'e7\'e3o e atualiza\'e7\'e3o autom\'e1tica de gr\'e1ficos de m\'e9tricas a partir do reposit\'f3rio de c\'f3digo \
+( )	Ordena\'e7\'e3o colaborativa da prioridade dos problemas a serem endere\'e7ados pela equipe de desenvolvimento \
+( )	Linha do tempo no site do projeto ligada ao reposit\'f3rio de forma a facilitar an\'e1lises em retrospectivas \
+( )	Um rob\'f4 nos canais de communica\'e7\'e3o da equipe de forma a facilitar a comunica\'e7\'e3o ass\'edncrona \
+\pard\pardeftab720\sb60\qj
+\cf0 \page \pard\pardeftab720\sb240\sa60\ql\qnatural
+
+\b\fs40 \cf0  C\
+\pard\pardeftab720\sb240\qj
+\cf0 Pesquisa para praticantes de m\'e9todos \'c1geis\
+\
+\
+\pard\pardeftab720\sb60\qj
+
+\b0\fs24 \cf0 A pesquisa abaixo \'e9 uma vers\'e3o em Portugu\'eas para impress\'e3o da pesquisa disponibilizada em {\field{\*\fldinst{HYPERLINK "http://www.ime.usp.br/~corbucci/agile-survey.html"}}{\fldrslt 
+\f1 http://www.ime.usp.br/~corbucci/agile-survey.html}} do dia 28 de Julho de 2009 at\'e9 o dia 28 de Outubro de 2009.\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 1.	Pa\'eds de moradia: 
+\f1 _________________
+\f0 \
+2.	Ano de nascimento: 
+\f1 ______
+\f0 \
+3.	N\'famero de projeto que usavam princ\'edpios \'e1geis que participou: \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	0 \
+( )	1 a 5 \
+( )	6 a 10 \
+( )	11 a 50 \
+( )	51 a 100 \
+( )	Mais de 100 \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 4.	Ano do primeiro projeto que usava princ\'edpios \'e1geis que participou: 
+\f1 ______
+\f0 \
+5.	Qual \'e9 seu principal papel nos projeto \'e1geis em que participa?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Gerente de projeto \
+( )	L\'edder de equipe \
+( )	Programador \
+( )	Analista de Qualidade \
+( )	Testador \
+( )	Acompanhador \
+( )	Documentador \
+( )	Outro: 
+\f1 _________________
+\f0  \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 6.	Qual n\'famero m\'e9dio de integrantes nas equipes dos projeto \'e1geis que participou?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	1 a 5 \
+( )	6 a 10 \
+( )	11 a 20 \
+( )	21 a 50 \
+( )	51 a 100 \
+( )	Mais de 100 \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 7.	J\'e1 trabalhou em projeto \'e1geis com uma equipe (ou parte dela) distribu\'edda?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Sim \
+( )	N\'e3o \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 8.	Qual \'e9 (ou foi) o principal canal de comunica\'e7\'e3o entre essa equipe?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Cara a cara \
+( )	Site na Internet \
+( )	Lista de correio eletr\'f4nico \
+( )	Ferramenta de rastreamento de problemas \
+( )	IRC (Internet Relay Chat) \
+( )	Mensagens Instant\'e2neas \
+( )	Correios eletr\'f4nicos individuais \
+( )	Voz sobre IP (Skype, Ekiga, iChat, etc...) \
+( )	Nenhum \
+( )	Outro: 
+\f1 _____________
+\f0  \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 9.	Como voc\'ea avalia a qualidade de communica\'e7\'e3o da equipe? \
+\pard\pardeftab720\li600\qj
+\cf0 P\'e9ssima 
+\f1 ---------------------------------------
+\f0  \'d3tima\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 10.	Qual \'e9 o principal canal de comunica\'e7\'e3o entre as equipes de seus projeto \'e1geis e os clientes desses projeto?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Cara a cara \
+( )	Site na Internet \
+( )	Lista de correio eletr\'f4nico \
+( )	Ferramenta de rastreamento de problemas \
+( )	IRC (Internet Relay Chat) \
+( )	Mensagens Instant\'e2neas \
+( )	Correios eletr\'f4nicos individuais \
+( )	Voz sobre IP (Skype, Ekiga, iChat, etc...) \
+( )	Nenhum \
+( )	Outro: 
+\f1 _____________
+\f0  \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 11.	Como voc\'ea avalia a qualidade de communica\'e7\'e3o entre essa equipe e o cliente? \
+\pard\pardeftab720\li600\qj
+\cf0 P\'e9ssima 
+\f1 ---------------------------------------
+\f0  \'d3tima\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 12.	Ordene os seguintes problemas do que mais atrapalha (ou atrapalhava) no seu projeto \'e1geis distribu\'eddo ao que menos atrapalha (ou atrapalhava)?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Descobrir o que os usu\'e1rios precisavam \
+( )	Descobrir qual era a pr\'f3xima tarefa a ser realizada \
+( )	Entender como o projeto funciona do ponto de vista t\'e9cnico \
+( )	Descobrir o estado atual do projeto \
+( )	Integrar c\'f3digo no reposit\'f3rio central \
+( )	Manter as informa\'e7\'f5es sobre o projeto atualizadas no principal canal de comunica\'e7\'e3o \
+( )	Avaliar o trabalho realizado para identificar pontos de melhora \
+( )	Sincronizar com os outros colaboradores para atingir um objetivo comum \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 13.	Ordene as seguintes ferramenta daquela que mais resolveria os problemas citados anteriormente para a que menos resolveria. \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Mensagem ou Correio Eletr\'f4nico autom\'e1tico em caso de falha na montagem autom\'e1tica do projeto \
+( )	Estado din\'e2mico da vers\'e3o em desenvolvimento a partir da ferramenta de controle de problemas \
+( )	Gerenciamento da ferramenta de controle de problemas a partir dos logs de commit do reposit\'f3rio de c\'f3digo \
+( )	Lan\'e7amento de nova vers\'e3o a partir de um click no site do projeto \
+( )	Gera\'e7\'e3o e atualiza\'e7\'e3o autom\'e1tica de gr\'e1ficos de m\'e9tricas a partir do reposit\'f3rio de c\'f3digo \
+( )	Ordena\'e7\'e3o colaborativa da prioridade dos problemas a serem endere\'e7ados pela equipe de desenvolvimento \
+( )	Linha do tempo no site do projeto ligada ao reposit\'f3rio de forma a facilitar an\'e1lises em retrospectivas \
+( )	Um rob\'f4 nos canais de communica\'e7\'e3o da equipe de forma a facilitar a comunica\'e7\'e3o ass\'edncrona \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 14.	Voc\'ea j\'e1 contribuiu com projeto de software livre?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Sim \
+( )	N\'e3o \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 15.	Qu\'e3o \'e1geis voc\'ea avaliaria o principal projeto de software livre com o qual voc\'ea contribui (ou contribuiu)? \
+\pard\pardeftab720\li600\qj
+\cf0 Nada \'e1geis 
+\f1 ---------------------------------------
+\f0  Muito \'e1geis\
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 16.	Ordene os seguintes problemas do que mais atrapalha (ou atrapalhava) no seu projeto de software livre ao que menos atrapalha (ou atrapalhava)?  \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Descobrir o que os usu\'e1rios precisavam \
+( )	Descobrir qual era a pr\'f3xima tarefa a ser realizada \
+( )	Entender como o projeto funciona do ponto de vista t\'e9cnico \
+( )	Descobrir o estado atual do projeto \
+( )	Integrar c\'f3digo no reposit\'f3rio central \
+( )	Manter as informa\'e7\'f5es sobre o projeto atualizadas no principal canal de comunica\'e7\'e3o \
+( )	Avaliar o trabalho realizado para identificar pontos de melhora \
+( )	Sincronizar com os outros colaboradores para atingir um objetivo comum \
+\pard\pardeftab720\li600\fi-300\sb50\qj
+\cf0 17.	Ordene as seguintes ferramenta daquela que mais resolveria os problemas citados anteriormente para a que menos resolveria. \
+\pard\pardeftab720\li1200\fi-300\sb50\qj
+\cf0 ( )	Mensagem ou Correio Eletr\'f4nico autom\'e1tico em caso de falha na montagem autom\'e1tica do projeto \
+( )	Estado din\'e2mico da vers\'e3o em desenvolvimento a partir da ferramenta de controle de problemas \
+( )	Gerenciamento da ferramenta de controle de problemas a partir dos logs de commit do reposit\'f3rio de c\'f3digo \
+( )	Lan\'e7amento de nova vers\'e3o a partir de um click no site do projeto \
+( )	Gera\'e7\'e3o e atualiza\'e7\'e3o autom\'e1tica de gr\'e1ficos de m\'e9tricas a partir do reposit\'f3rio de c\'f3digo \
+( )	Ordena\'e7\'e3o colaborativa da prioridade dos problemas a serem endere\'e7ados pela equipe de desenvolvimento \
+( )	Linha do tempo no site do projeto ligada ao reposit\'f3rio de forma a facilitar an\'e1lises em retrospectivas \
+( )	Um rob\'f4 nos canais de communica\'e7\'e3o da equipe de forma a facilitar a comunica\'e7\'e3o ass\'edncrona \
+\pard\pardeftab720\sb220\qj
+
+\f2\b\fs32 \cf0 Bibliography
+\f0\b0\fs24 \
+\pard\pardeftab720\li450\fi-450\sb60\qj
+\cf0 [1]	Kent Beck, 
+\i Tools for agility
+\i0 , {\field{\*\fldinst{HYPERLINK "%22http://www.microsoft.com/downloads/details.aspx?FamilyID=ae7e07e8-0872-%25"}}{\fldrslt 
+\f1 http://www.microsoft.com/downloads/details.aspx?FamilyID=ae7e07e8-0872-%\
+47c4-b1e7-2c1de7facf96}}. \'daltimo acesso: 02/10/2008.\
+\pard\pardeftab720\li450\fi-450\qj
+\cf0 [2]	to3em\'a0, 
+\i Extreme programming explained: Embrace change
+\i0 , us ed ed., Addison-Wesley Professional, 1999.\
+[3]	Kent Beck and Cynthia Andres, 
+\i Extreme programming explained: Embrace change, 2nd edition
+\i0 , 2 ed., The XP Series, Addison-Wesley Professional, 2004.\
+[4]	Kent Beck, Alistair Cockburn, Ward Cunningham, Martin Fowler, Ken Schwaber, and al., 
+\i Manifesto for agile software development
+\i0 , {\field{\*\fldinst{HYPERLINK "http://agilemanifesto.org/"}}{\fldrslt 
+\f1 http://agilemanifesto.org/}}, 02 2001, \'daltimo acessoed on 01/10/2008.\
+[5]	Yochai Benkler, 
+\i The wealth of networks: How social production transforms markets and freedom
+\i0 , 2006.\
+[6]	Frederick\'a0P. Brooks, Jr., 
+\i No silver bullet: Essence and accidents of software engineering
+\i0 , IEEE Computer 
+\b 20
+\b0  (1987), no.\'a04, 10\'9619.\
+[7]	Alistair Cockburn, 
+\i Agile software development
+\i0 , Addison Wesley, 2002.\
+[8]	Bert\'a0J Dempsey, Debra Weiss, Paul Jones, and Jane Greenberg, 
+\i A quantitative profile of a community of open source linux developers
+\i0 , Tech. report, University of North Carolina at Chapel Hill, 1999.\
+[9]	Karl Fogel, 
+\i Producing open source software
+\i0 , O\'92Reilly, 2005.\
+[10]	Martin Fowler, 
+\i The new methodology
+\i0 , {\field{\*\fldinst{HYPERLINK "http://martinfowler.com/articles/newMethodologyOriginal.html"}}{\fldrslt 
+\f1 http://martinfowler.com/articles/newMethodologyOriginal.html}}. \'daltimo acesso: 01/10/2008, Original version.\
+[11]	Viviane Malheiros, Erika H\'f6hn, and Jos\'e9\'a0Carlos Maldonado, 
+\i Qualipso project: Quality recommendations for floss development processes
+\i0 , A perspective based on trustworthy elements, 02 2009.\
+[12]	Dennis Mancl, Steven Fraser, and William Opdyke, 
+\i No silver bullet: a retrospective on the essence and accidents of software engineering
+\i0 , Companion to the 22nd Annual ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications, OOPSLA 2007, 2007.\
+[13]	Frank Maurer, 
+\i Supporting distributed extreme programming
+\i0 , Extreme Programming and Agile Methods - XP/Agile Universe 2002, Lecture Notes in Computer Science, vol. 2418/2002, Springer Berlin / Heidelberg, 2002, pp.\'a095\'96114.\
+[14]	Nachiappan Nagappan, Prashant Baheti, Laurie Williams, Edward Gehringer, and David Stotts, 
+\i Virtual collaboration through distributed pair programming
+\i0 , Tech. report, Department of Computer Science, North Carolina State University, 2003.\
+[15]	Dan North, 
+\i Behaviour driven development
+\i0 , {\field{\*\fldinst{HYPERLINK "http://dannorth.net/introducing-bdd"}}{\fldrslt 
+\f1 http://dannorth.net/introducing-bdd}}. \'daltimo acesso: 30/09/2008.\
+[16]	International\'a0Institute of\'a0Infonomics University\'a0of Maastricht, 
+\i Free/libre/open source software: Survey and study
+\i0 , {\field{\*\fldinst{HYPERLINK "http://www.flossproject.org/floss1/stats.html"}}{\fldrslt 
+\f1 http://www.flossproject.org/floss1/stats.html}}. \'daltimo acesso: 30/09/2008.\
+[17]	to3em\'a0, 
+\i Free/libre/open source software: Survey and study - report
+\i0 , {\field{\*\fldinst{HYPERLINK "http://www.flossproject.org/report/"}}{\fldrslt 
+\f1 http://www.flossproject.org/report/}}. \'daltimo acesso: 30/09/2008.\
+[18]	Taiichi Ohno, 
+\i Toyota production system: Beyond large-scale production
+\i0 , Productivity Press, 03 1998.\
+[19]	Andy Oram, 
+\i Why do people write free documentation?  results of a survey
+\i0 , Tech. report, O\'92Reilly, 2007.\
+[20]	Mary Poppendieck and Tom Poppendieck, 
+\i Introduction to lean software development
+\i0 , Extreme Programming and Agile Processes in Software Engineering, 6th International Conference, XP 2005, Proceedings (Hubert Baumeister, Michele Marchesi, and Mike Holcombe, eds.), 2005.\
+[21]	Eric\'a0S. Raymond, 
+\i The cathedral & the bazaar: Musings on Linux and open source by an accidental revolutionary
+\i0 , O\'92Reilly & Associates, Inc., 1999.\
+[22]	Christian\'a0Robottom Reis, 
+\i Caracteriza\'e7\'e3o de um processo de software para projeto de software livre
+\i0 , Master\'92s thesis, Instituto de Ci\'eancias Matem\'e1ticas e de Computa\'e7\'e3o da Universidade de S\'e3o Paulo, 2003.\
+[23]	Dirk Riehle, 
+\i The economic motivation of open source software: Stakeholder perspectives
+\i0 , IEEE Computer 
+\b 40
+\b0  (2007), no.\'a04, 25\'9632.\
+[24]	Danilo Sato, Alfredo Goldman, and Fabio Kon, 
+\i Tracking the evolution of object-oriented quality metrics on agile projects
+\i0 , Agile Processes in Software Engineering and Extreme Programming, 8th International Conference, XP 2007, Proceedings (Giulio Concas, Ernesto Damiani, Marco Scotto, and Giancarlo Succi, eds.), 2007.\
+[25]	Ken Schwaber, 
+\i Agile project management with scrum
+\i0 , Microsoft Press, 2004.\
+[26]	J.\'a0Surowiecki, 
+\i The wisdom of crowds: Why the many are smarter than the few and how collective wisdom shapes business, economies, societies, and nations
+\i0 , Doubleday, 2004.\
+[27]	Jeff Sutherland, Anton Viktorov, Jack Blount, and Nikolai Puntikov, 
+\i Distributed scrum: Agile project management with outsourced development teams
+\i0 , HICSS, IEEE Computer Society, 2007, p.\'a0274.\
+[28]	Don Tapscott and Anthony\'a0D. Williams, 
+\i Wikinomics: How mass collaboration changes everything
+\i0 , Portfolio, 2006.\
+}
